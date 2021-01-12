@@ -1,0 +1,86 @@
+
+/* sidebar switcher */
+ 
+#sidebar-wrapper.bg-theme .brand-logo .logo-text{
+	color: #ffffff;
+}
+
+#sidebar-wrapper.bg-theme .brand-logo{
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#sidebar-wrapper.bg-theme .close-btn{
+	color: rgba(255, 255, 255, 0.40);
+}
+
+#sidebar-wrapper.bg-theme .metismenu li.menu-label{
+	color: rgba(255, 255, 255, 0.40);
+}
+
+#sidebar-wrapper.bg-theme .metismenu a{
+	color: rgba(255, 255, 255, 0.40);
+}
+
+#sidebar-wrapper.bg-theme .metismenu ul {
+    border: 1px solid rgba(255, 255, 255, 0.20);
+}
+#sidebar-wrapper.bg-theme .metismenu a:hover,
+#sidebar-wrapper.bg-theme .metismenu a:focus,
+#sidebar-wrapper.bg-theme .metismenu a:active,
+
+#sidebar-wrapper.bg-theme .metismenu .mm-active > a {
+    color: #fff;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.30);
+}
+
+
+
+@media screen and (min-width: 1025px) {
+	
+ #wrapper.toggled:not(.sidebar-hovered) #sidebar-wrapper.bg-theme .metismenu a{
+		border: 1px solid rgba(255, 255, 255, 0.15);
+	}
+	
+}
+	
+/* topbar switcher */
+
+.color-header .toggle-menu i{
+	color: #ffffff;
+}
+
+.color-header .right-nav-link a.nav-link{
+	color: #ffffff;
+}
+
+.color-header .search-bar input {
+	 background-color: #ffffff;
+	 border: 1px solid #ffffff;
+}
+
+.color-header .search-bar input:focus { 
+   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.255);
+}
+
+
+/* scrollbar */
+
+#sidebar-wrapper.bg-theme .simplebar-scrollbar:before {
+    background: rgba(255, 255, 255, 0.40);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
