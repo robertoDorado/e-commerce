@@ -352,15 +352,12 @@ require_once "class/register_product.class.php";
                             spanElement.classList.add('label')
                             spanElement.style.zIndex = '0'
                             
-
-                            imgElement.src = `arquivoproduto/${$products.img_produto}`
                             spanElement.innerHTML = $products.novo_produto
-
                             spanElementSearch.innerHTML = $products.titulo_produto
                             pElement.innerHTML = $products.descricao_produto
 
                             linkProduct.innerHTML = 'Saiba mais'
-                            linkProduct.setAttribute('href', '#')
+                            linkProduct.setAttribute('href', `produto.php?${$products.id}`)
 
                             pTagPriceProduct.innerHTML = $products.preco_produto
 
@@ -369,6 +366,18 @@ require_once "class/register_product.class.php";
                             if(!$products.novo_produto){
                                 spanElement.style.display = 'none'
                             }
+
+                            if($products.img_produto == ''){
+                                imgElement.src = 'arquivoproduto/default-image.png'
+                            }else{
+                                imgElement.src = `arquivoproduto/${$products.img_produto}`
+                            }
+
+                            if($products.status_produto == 0){
+                                divColMd4.style.display = 'none'
+                            }
+                            
+                            
 
                             const inpSearch = document.getElementById('buscar')
                             h5Element.setAttribute('class', 'titulo_produto')

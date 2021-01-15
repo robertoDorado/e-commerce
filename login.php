@@ -60,6 +60,9 @@ require_once "class/user.class.php";
             <div class="input-group">
               <input name="password" type="password" class="form-control lowercase password" id="loginPassword" placeholder="Senha">
             </div>
+            <div class="input-group">
+              <input name="id" type="hidden" id="idUser">
+            </div>
           </div>
           <button class="btn btn-primary btn-block shadow-none my-4 btn-login" type="submit">Login</button>
         </form>
@@ -81,45 +84,16 @@ require_once "class/user.class.php";
 </script>
 
 
-
 <script>
-    const xmlhttp = new XMLHttpRequest;
-    xmlhttp.onreadystatechange = () => {
-      if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-
-        const objectUser = JSON.parse(xmlhttp.response)
-
-        objectUser.map(($objectUser) => {
-
-        document.querySelector('#loginForm').addEventListener('submit', ($evt) => {
-          const inpEmailAddress = document.querySelector('#emailAddress').value
-          const inpLoginPassword = document.querySelector('#loginPassword').value
-
-          const cryptPassword = CryptoJS.MD5(inpLoginPassword).toString();
-                
-                
-          if(inpEmailAddress != $objectUser.email || cryptPassword != $objectUser.senha){
-              $evt.preventDefault()
-              document.querySelector('.error-message').style.display = 'block'
-            }
-            
-            if(inpEmailAddress == '' || cryptPassword == ''){
-              $evt.preventDefault()
-              document.querySelector('.error-message').style.display = 'block'
-              document.querySelector('.select-message-error').innerHTML = 'Preencha todos os campos'
-            }else{
-              document.querySelector('.select-message-error').innerHTML = 'Email ou senha incorreto'
-            }
-      })
-    
-  })
-  
-  }
-}
-
-    xmlhttp.open("GET", "http://localhost/projetos/e-commerce/class/json.user.class.php")
-    xmlhttp.send()
+    const url = window.location.href
+    const errorUrl = url.substr(46)
+    if(errorUrl){
+      document.querySelector('.error-message').style.display = 'block'
+    }
+      window.history.replaceState({}, "Hide", "http://localhost/projetos/e-commerce/login.php")
 </script>
+
+
 
 <style>
   .error-message{

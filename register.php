@@ -1,17 +1,3 @@
-<?php require_once "class/user.class.php"; ?>
-<?php 
-$user = new User;
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-        $nome = addslashes($_POST["nome"]);
-        $email = addslashes($_POST["email"]);
-        $senha = md5(addslashes($_POST["password"]));
-
-        $user->cadastrar($nome, $email, $senha);
-
-        return true;
-    }
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -60,10 +46,10 @@ $user = new User;
       <div class="col-11 col-sm-9 col-md-7 col-lg-5 col-xl-4 m-auto py-5">
         <div class="logo text-center mb-2"> <a href="index.html" title="Oxyy"><img src="img/logo/logo-meraki-admin.png" alt="meraki"></a> </div>
         <p class="lead text-center mb-3">Parece que você é novo por aqui!</p>
-        <form id="registerForm" method="POST" action="#">
+        <form id="registerForm" method="POST" action="new-user.php" enctype="multipart/form-data">
           <div class="vertical-input-group">
             <div class="input-group">
-              <input nome name="nome" type="text" class="form-control" id="fullName" required placeholder="Nome Completo">
+              <input nome name="nome" type="text" class="form-control" id="fullName" required placeholder="Nome de usuario">
             </div>
             <div class="input-group">
               <input name="email" type="email" class="form-control lowercase" id="emailAddress" required placeholder="Email">
@@ -71,10 +57,15 @@ $user = new User;
             <div class="input-group">
               <input name="password" type="password" class="form-control lowercase" id="loginPassword" required placeholder="Senha">
             </div>
+            <label class="labelInput">
+              <input value="testando" id="file" name="userPhoto" type="file" class="file_customizada" required/>
+              <i class="fa fa-search icon-search"></i><span class="span_file">Selecione uma foto de perfil</span>
+            </label>
           </div>
           <button class="btn btn-primary btn-block shadow-none my-4" type="submit">Criar Conta</button>
         </form>
-        <p class="text-center text-muted mb-3">Já Possui uma conta? <a class="btn-link" href="login.php">Log In</a></p>
+        <div class="error-message"><p class="lead text-center select-message-error">Conta já cadastrada anteriormente</p></div>
+        <p class="text-center text-muted mb-3">Já Possui uma conta? <a class="btn-link" href="login.php">Login</a></p>
         <!-- <p class="text-center text-muted text-1 mb-0">By creating an account, you agree to Oxyy <a class="btn-link" href="#">Terms of use</a> and <a class="btn-link" href="#">Privacy Policy</a></p> -->
       </div>
     </div>
@@ -83,6 +74,78 @@ $user = new User;
     <p class="text-center text-2 text-muted mb-0">Copyright © 2020 <a href="#" class="vmb-direitos-autorais">Meraki</a>. Todos os Direitos Reservados.</p>
   </div>
 </div>
+
+<script>
+    document.getElementById('file').addEventListener('change', ($evt) => {
+        const onlyName = $evt.target.value.substr(12)
+        const spanFile = document.querySelector('.span_file')
+        spanFile.innerHTML = onlyName
+    })
+</script>
+
+
+<style>
+  label.labelInput input[type="file"] {
+    position: fixed;
+    top: -1000px;
+  }
+  .labelInput{
+    width:100%;
+    border:1px solid #dae1e3;
+    border-top:none;
+    background-color:#fff;
+  }
+  .icon-search{
+    padding:15px;
+    margin:0;
+    background-color:#dae1e3;
+  }
+  .span_file{
+    margin-left:20px;
+  }
+</style>
+
+
+
+
+<script>
+    const xmlhttp = new XMLHttpRequest;
+
+    xmlhttp.onreadystatechange = () => {
+      if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+      
+      const objectJson = JSON.parse(xmlhttp.response)
+
+      objectJson.map(($objectJson) => {
+
+          document.getElementById("registerForm").addEventListener('submit', ($evt) => {
+
+              const inpEmail = document.getElementById("emailAddress").value
+
+              if(inpEmail == $objectJson.email){
+                $evt.preventDefault()
+                document.querySelector('.error-message').style.display = 'block'
+              }
+          })
+
+      })
+
+      }
+    }
+
+    xmlhttp.open("GET", "http://localhost/projetos/e-commerce/class/json.user.class.php")
+    xmlhttp.send()
+</script>
+
+<style>
+  .error-message{
+    background-color:rgb(218, 44, 56);
+    display:none;
+  }
+  .error-message p{
+    color:#fff;
+  }
+</style>
 
 <!-- Styles Switcher -->
 <div id="styles-switcher" class="left">
