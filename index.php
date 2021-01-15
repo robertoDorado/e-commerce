@@ -257,21 +257,21 @@ require_once "class/register_product.class.php";
 
           
               
-              <style>
-                .lista-categoria li{
-                    display:inline-block;
-                    float:right;
-                }
-                .lista{
-                    margin-right:120px;
-                }
-                .lista-categoria li button{
-                    width:100px;
-                }
-                .lista-categoria li button:hover{
-                    border:none;
-                }
-              </style>
+            <style>
+            .lista-categoria li{
+                display:inline-block;
+                float:right;
+            }
+            .lista{
+                margin-right:120px;
+            }
+            .lista-categoria li button{
+                width:100px;
+            }
+            .lista-categoria li button:hover{
+                border:none;
+            }
+            </style>
 
 
             <div class="boxed boxed--md container">
@@ -357,7 +357,7 @@ require_once "class/register_product.class.php";
                             pElement.innerHTML = $products.descricao_produto
 
                             linkProduct.innerHTML = 'Saiba mais'
-                            linkProduct.setAttribute('href', `produto.php?${$products.id}`)
+                            linkProduct.setAttribute('href', `produto.php?id=${$products.id}`)
 
                             pTagPriceProduct.innerHTML = $products.preco_produto
 

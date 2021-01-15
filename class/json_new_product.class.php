@@ -5,7 +5,7 @@ class NewProductsJson{
     use Conection;
 
     public function getNewProducts(){
-        $sql = "SELECT * FROM register_product";
+        $sql = "SELECT * FROM register_product ORDER BY id DESC";
         $sql = $this->pdo->query($sql);
 
         if($sql->rowCount() > 0){
