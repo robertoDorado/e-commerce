@@ -8,12 +8,14 @@ if(isset($_POST["novo_produto"])){
     $titulo = utf8_decode(addslashes($_POST["titulo"]));
     $descricao = utf8_decode(addslashes($_POST["descricao"]));
     $preco = utf8_decode(addslashes($_POST["preco"]));
+    $qtd = $_POST["qtd"];
 
     $produtoCadastrado = $product->cadastrarProduto($titulo, 
     $descricao, 
     $preco, 
     $_FILES["fileUpload"]["name"], 
-    utf8_decode(addslashes($_POST["novo_produto"])));
+    utf8_decode(addslashes($_POST["novo_produto"])),
+    $qtd);
 
     if($produtoCadastrado){
       $param = "true";
@@ -32,12 +34,14 @@ if(isset($_POST["novo_produto"])){
     $titulo = utf8_decode(addslashes($_POST["titulo"]));
     $descricao = utf8_decode(addslashes($_POST["descricao"]));
     $preco = utf8_decode(addslashes($_POST["preco"]));
+    $qtd = $_POST["qtd"];
 
     $produtoCadastrado = $product->cadastrarProduto($titulo, 
     $descricao, 
     $preco, 
     $_FILES["fileUpload"]["name"], 
-    utf8_decode(addslashes($_POST["novo_produto"])));
+    utf8_decode(addslashes($_POST["novo_produto"])),
+    $qtd);
 
     if($produtoCadastrado){
       $param = "true";

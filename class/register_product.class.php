@@ -5,10 +5,11 @@ class Product {
 
     use Conection;
 
-    public function cadastrarProduto($titulo, $descricao, $preco, $img, $novoProduto){
+    public function cadastrarProduto($titulo, $descricao, $preco, $img, $novoProduto, $qtd){
         $sql = 'INSERT INTO register_product SET titulo_produto = :titulo_produto,
         descricao_produto = :descricao_produto, preco_produto = :preco_produto,
-        img_produto = :img_produto, novo_produto = :novo_produto, status_produto = :status_produto';
+        img_produto = :img_produto, novo_produto = :novo_produto,
+        status_produto = :status_produto, qtd = :qtd';
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":titulo_produto", $titulo);
         $sql->bindValue(":descricao_produto", $descricao);
@@ -16,6 +17,7 @@ class Product {
         $sql->bindValue(":img_produto", $img);
         $sql->bindValue(":novo_produto", $novoProduto);
         $sql->bindValue(":status_produto", 1);
+        $sql->bindValue(":qtd", $qtd);
         $sql->execute();
 
         return true;
@@ -30,14 +32,17 @@ class Product {
         }
     }
 
-    public function updateProduct($titulo_Produto, $descricao_produto, $preco_produto, $img_produto, $novo_produto, $id){
-        $sql = "UPDATE register_product SET titulo_produto = :titulo_produto, descricao_produto = :descricao_produto, preco_produto = :preco_produto, img_produto = :img_produto, novo_produto = :novo_produto WHERE id = :id";
+    public function updateProduct($titulo_Produto, $descricao_produto, $preco_produto, $img_produto, $novo_produto, $id, $qtd){
+        $sql = "UPDATE register_product SET titulo_produto = :titulo_produto,
+        descricao_produto = :descricao_produto, preco_produto = :preco_produto,
+        img_produto = :img_produto, novo_produto = :novo_produto, qtd = :qtd WHERE id = :id";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":titulo_produto", $titulo_Produto);
         $sql->bindValue(":descricao_produto", $descricao_produto);
         $sql->bindValue(":preco_produto", $preco_produto);
         $sql->bindValue(":img_produto", $img_produto);
         $sql->bindValue(":novo_produto", $novo_produto);
+        $sql->bindValue(":qtd", $qtd);
         $sql->bindValue(":id", $id);
         $sql->execute();
 
@@ -92,6 +97,17 @@ class Product {
 
     public function getProductTagNew($id){
         $sql = "SELECT novo_produto FROM register_product WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return $sql->fetch();
+        }
+    }
+
+    public function getProductQtd($id){
+        $sql = "SELECT qtd FROM register_product WHERE id = :id";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":id", $id);
         $sql->execute();

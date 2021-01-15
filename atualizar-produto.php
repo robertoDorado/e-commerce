@@ -11,8 +11,9 @@ if(isset($_POST["novo_produto"])){
     $imgProduto = utf8_decode(addslashes($_FILES["fileUpload"]["name"]));
     $novoProduto = utf8_decode(addslashes($_POST["novo_produto"]));
     $idProduto = $_POST["id-produto"];
+    $qtd = $_POST["qtd"];
 
-    $updateOk = $product->updateProduct($tituloProduto, $descricaoProduto, $precoProduto, $imgProduto, $novoProduto, $idProduto);
+    $updateOk = $product->updateProduct($tituloProduto, $descricaoProduto, $precoProduto, $imgProduto, $novoProduto, $idProduto, $qtd);
 
     if($updateOk){
         echo '
@@ -31,8 +32,9 @@ if(isset($_POST["novo_produto"])){
     $imgProduto = utf8_decode(addslashes($_FILES["fileUpload"]["name"]));
     $novoProduto = utf8_decode(addslashes($_POST["novo_produto"]));
     $idProduto = $_POST["id-produto"];
+    $qtd = $_POST["qtd"];
 
-    $updateOk = $product->updateProduct($tituloProduto, $descricaoProduto, $precoProduto, $imgProduto, $novoProduto, $idProduto);
+    $updateOk = $product->updateProduct($tituloProduto, $descricaoProduto, $precoProduto, $imgProduto, $novoProduto, $idProduto, $qtd);
 
     if($updateOk){
         echo '
