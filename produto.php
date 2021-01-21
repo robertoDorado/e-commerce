@@ -1,5 +1,33 @@
 <?php
 require_once "class/register_product.class.php";
+require_once "class/user.class.php";
+$user = new User;
+
+if(isset($_SESSION['user_client'])){
+
+    $id = $_SESSION['user_client'];
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+    $user->getIdIpCostumer($id, $ip);
+
+    if(isset($id) && !empty($id)){
+        $data = $user->getUsersCostumers($id);
+    }
+}
+
+if(isset($_POST['email']) && isset($_POST['password'])){
+
+    $email = addslashes($_POST['email']);
+    $senha = md5(addslashes($_POST['password']));
+
+    $login = $user->loginUserCostumer($email, $senha);
+
+    if(!$login){
+        header("Location: login-client.php?erro");
+    }else{
+        header("Location:index.php");
+    }
+}
 ?>
 
 <!doctype html>
@@ -30,7 +58,7 @@ require_once "class/register_product.class.php";
                         <div class="row">
                             <div class="col-lg-1 col-md-2 hidden-xs">
                                 <div class="bar__module">
-                                    <a href="index.html"> <img  class="logo logo-dark" alt="logo" src="img/logo/logo-1.png"> <img  class="logo logo-light" alt="logo" src="img/logo/logo-1.png"> </a>
+                                    <a href="index.php"> <img  class="logo logo-dark" alt="logo" src="img/logo/logo-1.png"> <img  class="logo logo-light" alt="logo" src="img/logo/logo-1.png"> </a>
                                 </div>
                             </div>
                             <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
@@ -136,11 +164,22 @@ require_once "class/register_product.class.php";
                                         </li>
                                     </ul>
                                 </div>
+                                <?php if(isset($_SESSION['user_client'])):?>
                                 <div class="bar__module">
-                                    <a class="btn btn--sm btn--primary type--uppercase" href="#purchase-template"> <span class="btn__text">
-                                    Contato
+                                    <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
+                                        <?php foreach ($data as $newData):?>
+                                            Olá <?php echo $newData['nome']; ?>
+                                        <?php endforeach; ?>
                                 </span> </a>
                                 </div>
+                                <a href="sair-client.php">Sair</a>
+                                <?php else: ?>
+                                    <div class="bar__module">
+                                    <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
+                                        Faça o seu Login!
+                                </span> </a>
+                                </div>
+                                <?php endif;?>
                             </div>
                         </div>
                     </div>
@@ -175,63 +214,204 @@ require_once "class/register_product.class.php";
                         <div class="col-md-7 col-lg-6">
                             <div class="slider border--round boxed--border" data-paging="true" data-arrows="true">
                                 <ul class="slides">
-                                    <li> <img alt="Image" src="img/product-single-2.jpg"> </li>
+                                    <!-- <li> <img class="carroussel-img" alt="Image" src="img/product-single-2.jpg"> </li>
                                     <li> <img alt="Image" src="img/product-single-1.jpg"> </li>
-                                    <li> <img alt="Image" src="img/product-single-3.jpg"> </li>
+                                    <li> <img alt="Image" src="img/product-single-3.jpg"> </li> -->
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-5 col-lg-4">
-                            <h2>Tivoli Model One</h2>
-                            <div class="text-block"> <span class="h4 type--strikethrough inline-block">$549.99</span> <span class="h4 inline-block">$479</span> </div>
-                            <p> Tivoli's most popular line of consumer digital radios just got a refresh — expect clearer highs and deeper lows. Massive style upgrade with high-calibre aluminum frame and plush knobs and dials. </p>
-                            <ul class="accordion accordion-2 accordion--oneopen">
+                            <h2 class="select-title">Tivoli Model One</h2>
+                            <div class="text-block"> <span style="display:none;" class="h4 type--strikethrough inline-block">$549.99</span> <span class="h4 inline-block select-price">$479</span> </div>
+                            <p class="select-description"> Texto default </p>
+                            <ul class="accordion accordion-2 accordion--oneopen select-ul">
                                 <li>
-                                    <div class="accordion__title"> <span class="h5">Specifications</span> </div>
+                                    <div class="accordion__title"> <span class="h5">Especificações</span> </div>
                                     <div class="accordion__content">
-                                        <ul class="bullets">
-                                            <li><span>Frequence Response: 25KHz — 24,000KHz</span></li>
-                                            <li><span>DAB+ / FM / AM</span></li>
-                                            <li><span>16,000 mAh Internal Rehcargable Battery</span></li>
-                                            <li><span>10 Watts</span></li>
-                                        </ul>
+                                        <p style="text-align:justify" class="specify-area">Texto default</p>
                                     </div>
                                 </li>
                                 <li class="active">
-                                    <div class="accordion__title"> <span class="h5">Dimensions</span> </div>
+                                    <div class="accordion__title"> <span class="h5">Dimensões</span> </div>
                                     <div class="accordion__content">
-                                        <ul>
-                                            <li><span>Product: 3.5”W X 3.0”H X 3.0”D</span></li>
-                                            <li><span>Packaging: 7”W X 6”H X 5”D </span></li>
-                                        </ul>
+                                        <p class="dimensions-area">Texto default</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="accordion__title"> <span class="h5">Shipping Info</span> </div>
+                                    <div class="accordion__title"> <span class="h5">Informações de compra</span> </div>
                                     <div class="accordion__content">
-                                        <p> Generally ships between 2 - 4 working days from order confirmation. Orders only confirmed once payment has successfully processed. NOTE: When using services such as Skrill, payments can take longer to process (approx. 4 days). </p>
+                                        <p class="buy-info-area"> Texto default </p>
                                     </div>
                                 </li>
                             </ul>
+                            <?php if(isset($_SESSION['user_client'])):?>
                             <form>
                                 <div class="col-md-12">
-                                    <div class="input-select"> <select name="finish">
-								<option selected="selected" value="Default">Select A Finish</option>
-								<option value="Small">Wood Grain</option>
-								<option value="Medium">Brushed Aluminium</option>
-								<option value="Larger">Gunmetal Grey</option>
-							</select> </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4"> <input type="text" name="quantity" placeholder="QTY"> </div>
-                                <div class="col-md-6 col-lg-8"> <button type="submit" class="btn btn--primary">Add To Cart</button> </div>
+                                <div class="col-md-6 col-lg-4"> <input type="text" class="qtd" name="quantity" placeholder="QTD" readonly></div>
+                                <div style="display:flex;margin-left:16px;padding-bottom:20px;">
+                                    <a href="#" style="color:white;" class="btn btn--primary btn-increment">+</a>
+                                    <a href="#" style="color:white;" class="btn btn--primary btn-decrement">-</a>
+                                </div>
+                                <div class="col-lg-8"> <button type="submit" class="btn btn--primary">Adicionar ao Carrinho</button> </div>
+                                <div class="col-lg-8"> <a style="width:100%;color:white;" href="#" class="btn btn--primary">Comprar agora!</a> </div>
                             </form>
+                            <?php endif;?>
                         </div>
                     </div>
                 </div>
             </section>
+
+           
         
 
-            
+            <script>
+                document.querySelectorAll('.accordion__title').forEach(($divAccordion) => {
+                    $divAccordion.addEventListener('click', ($evt) => {
+                        const liItem = $evt.target.parentNode.parentNode
+                        liItem.classList.add('active')
+                    })
+                })
+            </script>
+
+
+            <!-- Requisição ajax do Produto -->
+            <script>
+                const xmlhttp = new XMLHttpRequest;
+
+                xmlhttp.onreadystatechange = () => {
+                    if(xmlhttp.status == 200 && xmlhttp.readyState == 4){
+                        const objectProduct = JSON.parse(xmlhttp.response)
+                        objectProduct.map(($objectProduct) => {
+
+
+                            let query = location.search.slice(1);
+                            let partes = query.split('&');
+                            let data = {};
+                            partes.forEach(function (parte) {
+                                let chaveValor = parte.split('=');
+                                let chave = chaveValor[0];
+                                let valor = chaveValor[1];
+                                data[chave] = valor;
+                            });
+
+                            if(data.id == $objectProduct.id){
+                                
+                                document.querySelector('.select-title').innerHTML = $objectProduct.titulo_produto
+                                document.querySelector('.select-price').innerHTML = $objectProduct.preco_produto
+                                document.querySelector('.select-description').innerHTML = $objectProduct.descricao_produto
+
+                                let qtdNumber = 1
+                                document.querySelector('.qtd').value = qtdNumber
+                                document.querySelector('.btn-increment').addEventListener('click', (e) => {
+                                    e.preventDefault()
+                                    qtdNumber++
+                                    document.querySelector('.qtd').value = qtdNumber
+                                    if(qtdNumber > $objectProduct.qtd){
+                                        qtdNumber = $objectProduct.qtd
+                                        document.querySelector('.qtd').value = qtdNumber
+                                    }
+                                })
+
+                                document.querySelector('.btn-decrement').addEventListener('click', (e) => {
+                                    e.preventDefault()
+                                    if(qtdNumber > 1){
+                                        qtdNumber--
+                                        document.querySelector('.qtd').value = qtdNumber
+                                    }
+
+                                })
+                                
+                                
+                            }
+                            
+                        })
+                    }
+                }
+
+                xmlhttp.open("GET", "http://localhost/projetos/e-commerce/class/json_new_product.class.php")
+                xmlhttp.send()
+            </script>
+
+
+
+            <!-- Requisição ajax dos detalhes -->
+            <script>
+                const xmlDetails = new XMLHttpRequest;
+
+                xmlDetails.onreadystatechange = () => {
+                    if(xmlDetails.status == 200 && xmlDetails.readyState == 4){
+                        
+                        const objectDetails = JSON.parse(xmlDetails.response)
+
+                        objectDetails.map(($objectDetails) => {
+
+                            let query = location.search.slice(1);
+                            let partes = query.split('&');
+                            let data = {};
+                            partes.forEach(function (parte) {
+                                let chaveValor = parte.split('=');
+                                let chave = chaveValor[0];
+                                let valor = chaveValor[1];
+                                data[chave] = valor;
+                            });
+
+                            if(data.id == $objectDetails.id_produto){
+
+                                document.querySelector('.specify-area').innerHTML = $objectDetails.specify
+                                document.querySelector('.dimensions-area').innerHTML = $objectDetails.dimensions
+                                document.querySelector('.buy-info-area').innerHTML = $objectDetails.buy_info
+
+                            }
+                        })
+                    }
+                }
+
+                xmlDetails.open("GET", "http://localhost/projetos/e-commerce/class/json_product_details.php")
+                xmlDetails.send()
+            </script>
+
+            <!-- Requisição ajax do carrossel -->
+            <script>
+                const xmlCarroussel = new XMLHttpRequest;
+
+                xmlCarroussel.onreadystatechange = () => {
+                    if(xmlCarroussel.status == 200 && xmlCarroussel.readyState == 4){
+
+                        const objectCarroussel = JSON.parse(xmlCarroussel.response)
+                        
+                        objectCarroussel.map(($objectCarroussel) => {
+
+                            let query = location.search.slice(1);
+                            let partes = query.split('&');
+                            let data = {};
+                            partes.forEach(function (parte) {
+                                let chaveValor = parte.split('=');
+                                let chave = chaveValor[0];
+                                let valor = chaveValor[1];
+                                data[chave] = valor;
+                            });
+
+                            if(data.id == $objectCarroussel.id_produto){
+                                
+                                const slides = document.querySelector('.slides')
+                                const liItem = document.createElement('li')
+                                const imgCarroussel = document.createElement('img')
+
+                                slides.append(liItem)
+                                liItem.append(imgCarroussel)
+
+                                imgCarroussel.src = `carroussel-img/${$objectCarroussel.imgs}`
+                                imgCarroussel.setAttribute("alt", "Image")
+
+                            }
+                        })
+                    }
+                }
+
+                xmlCarroussel.open("GET", "http://localhost/projetos/e-commerce/class/json_product_carroussel.php")
+                xmlCarroussel.send()
+            </script>
 
             <footer class="space--sm footer-2">
                 <div class="container">

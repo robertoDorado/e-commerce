@@ -10,6 +10,9 @@ $user = new User;
 
         $user->cadastrar($nome, $email, $senha, $img_user);
 
+    }else{
+
+        header("Location: register.php");
     }
 
     

@@ -1,8 +1,35 @@
 <?php
-require_once "class/register_product.class.php";
+require_once "class/user.class.php";
+$user = new User;
+
+if(isset($_SESSION['user_client'])){
+
+    $id = $_SESSION['user_client'];
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+    $user->getIdIpCostumer($id, $ip);
+
+    if(isset($id) && !empty($id)){
+        $data = $user->getUsersCostumers($id);
+    }
+}
+
+if(isset($_POST['email']) && isset($_POST['password'])){
+
+    $email = addslashes($_POST['email']);
+    $senha = md5(addslashes($_POST['password']));
+
+    $login = $user->loginUserCostumer($email, $senha);
+
+    if(!$login){
+        header("Location: login-client.php?erro");
+    }else{
+        header("Location:index.php");
+    }
+}
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
@@ -17,10 +44,6 @@ require_once "class/register_product.class.php";
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
-
-
-
-
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
@@ -30,17 +53,12 @@ require_once "class/register_product.class.php";
 
     </head>
 
-    
-    
-
-
-
     <nav id="menu1" class="bar menu-principal bar-1 hidden-xs">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-1 col-md-2 hidden-xs">
                                 <div class="bar__module">
-                                    <a href="index.html"> <img  class="logo logo-dark" alt="logo" src="img/logo/logo-1.png"> <img  class="logo logo-light" alt="logo" src="img/logo/logo-1.png"> </a>
+                                    <a href="index.php"> <img  class="logo logo-dark" alt="logo" src="img/logo/logo-1.png"> <img  class="logo logo-light" alt="logo" src="img/logo/logo-1.png"> </a>
                                 </div>
                             </div>
                             <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
@@ -146,11 +164,22 @@ require_once "class/register_product.class.php";
                                         </li>
                                     </ul>
                                 </div>
+                                <?php if(isset($_SESSION['user_client'])):?>
                                 <div class="bar__module">
-                                    <a class="btn btn--sm btn--primary type--uppercase" href="#purchase-template"> <span class="btn__text">
-                                    Contato
+                                    <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
+                                        <?php foreach ($data as $newData):?>
+                                            Olá <?php echo $newData['nome']; ?>
+                                        <?php endforeach; ?>
                                 </span> </a>
                                 </div>
+                                <a href="sair-client.php">Sair</a>
+                                <?php else: ?>
+                                    <div class="bar__module">
+                                    <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
+                                        Faça o seu Login!
+                                </span> </a>
+                                </div>
+                                <?php endif;?>
                             </div>
                         </div>
                     </div>
@@ -357,7 +386,12 @@ require_once "class/register_product.class.php";
                             pElement.innerHTML = $products.descricao_produto
 
                             linkProduct.innerHTML = 'Saiba mais'
-                            linkProduct.setAttribute('href', `produto.php?id=${$products.id}`)
+                            linkProduct.style.textDecoration = 'none'
+                            divColMd4.addEventListener('click', () => {
+                                window.location.href = `produto.php?id=${$products.id}`
+                            })
+                            divColMd4.style.cursor = 'pointer'
+                            // linkProduct.setAttribute('href', `produto.php?id=${$products.id}`)
 
                             pTagPriceProduct.innerHTML = $products.preco_produto
 
@@ -494,11 +528,12 @@ require_once "class/register_product.class.php";
                         </div>
                         <div class="col-md-6">
                             <div class="bg--secondary boxed boxed--border boxed--lg">
-                                <form action="//mrare.us8.list-manage.com/subscribe/post?u=77142ece814d3cff52058a51f&amp;id=f300c9cce8" data-success="Thanks for signing up.  Please check your inbox for a confirmation email." data-error="Por favor, preencha todos os campos em branco">
-                                    <input class="validate-required" type="text" name="NAME" placeholder="Seu nome"> 
-                                    <input class="validate-required validate-email" type="email" name="EMAIL" placeholder="E-mail" required>
-                                    <input data-js="telefone" class="validate-required validate-email" type="text" name="EMAIL" placeholder="Telefone" required>
-                                    <input data-js="celular" class="validate-required validate-email" type="text" name="EMAIL" placeholder="Celular" required>
+                                <form method="POST" action="PHPMailer/enviar_email.php" action="//mrare.us8.list-manage.com/subscribe/post?u=77142ece814d3cff52058a51f&amp;id=f300c9cce8" data-success="Obrigado por entrar em contato conosco, logo a nossa equipe irá retornar o contato" data-error="Por favor, preencha todos os campos em branco">
+                                    <input class="validate-required" type="text" name="nome" placeholder="Seu nome"> 
+                                    <input class="validate-required validate-email" type="email" name="email" placeholder="E-mail" required>
+                                    <input data-js="telefone" class="validate-required validate-email" type="text" name="telefone" placeholder="Telefone" required>
+                                    <input data-js="celular" class="validate-required validate-email" type="text" name="celular" placeholder="Celular" required>
+                                    <input type="hidden" name="fTxtNomeH">
                                     <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> 
                                     <button type="submit" class="btn btn--primary type--uppercase btn-enviar">Enviar</button>
                                     <div style="position: absolute; left: -5000px" aria-hidden="true"> <input type="text" name="b_77142ece814d3cff52058a51f_f300c9cce8" tabindex="-1"> </div>

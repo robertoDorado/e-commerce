@@ -1,6 +1,3 @@
-<?php
-require_once "class/user.class.php";
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -66,7 +63,9 @@ require_once "class/user.class.php";
           </div>
           <button class="btn btn-primary btn-block shadow-none my-4 btn-login" type="submit">Login</button>
         </form>
-        <div class="error-message"><p class="lead text-center select-message-error">Email ou senha incorreto</p></div>
+        <?php if(isset($_GET['erro'])):?>
+          <div style="display:block" class="error-message"><p class="lead text-center select-message-error">Email ou senha incorreto</p></div>
+        <?php endif;?>
         <p class="text-center text-muted mb-2">Faça a sua conta <a class="btn-link link" href="register.php">Inscreva-se</a></p>
         <!-- <p class="text-center mb-0"><a class="btn-link text-2 esqueceu-a-senha" href="forgot-Password-6.html">Esqueceu a sua senha?</a></p> -->
       </div>
@@ -85,11 +84,6 @@ require_once "class/user.class.php";
 
 
 <script>
-    const url = window.location.href
-    const errorUrl = url.substr(46)
-    if(errorUrl){
-      document.querySelector('.error-message').style.display = 'block'
-    }
       window.history.replaceState({}, "Hide", "http://localhost/projetos/e-commerce/login.php")
 </script>
 

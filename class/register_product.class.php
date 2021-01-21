@@ -135,4 +135,57 @@ class Product {
         return true;
     }
 
+
+
+    public function insertCarroussel($idProduto, $imgs){
+            $sql = "INSERT INTO product_page_carroussel SET id_produto = :id_produto, imgs = :imgs";
+            $sql = $this->pdo->prepare($sql);
+            $sql->bindValue(":id_produto", $idProduto);
+            $sql->bindValue(":imgs", $imgs);
+            $sql->execute();
+    
+            return true;
+
+    }
+
+    public function insertDetailsProduct($idProduto, $specify, $dimensions, $buyInfo){
+        if(!$this->updateAlreadyProductExist($idProduto, $specify, $dimensions, $buyInfo)){
+            $sql = "INSERT INTO product_page_details SET id_produto = :id_produto, specify = :specify,
+            dimensions = :dimensions, buy_info = :buy_info";
+            $sql = $this->pdo->prepare($sql);
+            $sql->bindValue(":id_produto", $idProduto);
+            $sql->bindValue(":specify", $specify);
+            $sql->bindValue(":dimensions", $dimensions);
+            $sql->bindValue(":buy_info", $buyInfo);
+            $sql->execute();
+    
+            return true;
+        }
+
+    }
+
+    private function updateAlreadyProductExist($idProduto, $specify, $dimensions, $buyInfo){
+        $sql = "SELECT * FROM product_page_details WHERE id_produto = :id_produto";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id_produto", $idProduto);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $sql = "UPDATE product_page_details SET specify = :specify,
+            dimensions = :dimensions, buy_info = :buy_info WHERE id_produto = :id_produto";
+            $sql = $this->pdo->prepare($sql);
+          
+            $sql->bindValue(":id_produto", $idProduto);
+            $sql->bindValue(":specify", $specify);
+            $sql->bindValue(":dimensions", $dimensions);
+            $sql->bindValue(":buy_info", $buyInfo);
+            $sql->execute();
+
+            return true;
+
+        }
+    }
+
+    
+
 }
