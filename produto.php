@@ -1,7 +1,9 @@
 <?php
 require_once "class/register_product.class.php";
 require_once "class/user.class.php";
+require_once "class/carrinho.class.php";
 $user = new User;
+$cart = new Cart;
 
 if(isset($_SESSION['user_client'])){
 
@@ -173,6 +175,13 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                 </span> </a>
                                 </div>
                                 <a href="sair-client.php">Sair</a>
+                                <a href="carrinho.php"><i class="fa fa-shopping-cart select-cart"></i></a>
+                                <?php $items = $cart->getList(); ?>
+                                <?php if($items):?>
+                                    <span class="item-cart"><?php echo count($items);?></span>
+                                <?php else: ?>
+                                    <span class="item-cart">0</span>
+                                <?php endif; ?>
                                 <?php else: ?>
                                     <div class="bar__module">
                                     <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
@@ -186,6 +195,38 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 </nav>
             </div>
         </div>
+
+        <style>
+            .item-cart{
+                background:#4a90e2;
+                color:white;
+                margin:0;
+                top:-18px;
+                position:absolute;
+                z-index:2;
+                padding: .3rem 1rem;
+                min-width: 1em;
+                border-radius: 9999px;
+                text-align: center;
+                margin-left:25px;
+            }
+            .select-cart{
+                opacity:1;
+                color:#4a90e2;
+                font-size:20px;
+                cursor:pointer;
+                position:absolute;
+                margin-top:10px;
+                margin:0;
+                top:5px;
+                margin-left:5px;
+                font-size:25px;
+            }
+            .select-cart:hover{
+                opacity:.7;
+                transition:.5s;
+            }
+        </style>
             
         <style>
             .bar .logo{
@@ -245,10 +286,12 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                 </li>
                             </ul>
                             <?php if(isset($_SESSION['user_client'])):?>
-                            <form>
+                            <form method="POST" action="carrinho.php">
                                 <div class="col-md-12">
                                 </div>
-                                <div class="col-md-6 col-lg-4"> <input type="text" class="qtd" name="quantity" placeholder="QTD" readonly></div>
+                                <div class="col-md-6 col-lg-4"> 
+                                <input type="text" class="qtd" name="qtd" placeholder="QTD" readonly></div>
+                                <input type="hidden" name="id" value="<?php echo $_GET["id"];?>">
                                 <div style="display:flex;margin-left:16px;padding-bottom:20px;">
                                     <a href="#" style="color:white;" class="btn btn--primary btn-increment">+</a>
                                     <a href="#" style="color:white;" class="btn btn--primary btn-decrement">-</a>
@@ -413,6 +456,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 xmlCarroussel.send()
             </script>
 
+</body>
+
             <footer class="space--sm footer-2">
                 <div class="container">
                     <div class="row">
@@ -486,7 +531,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     <script src="js/smooth-scroll.min.js"></script>
     <script src="js/scripts.js"></script>
 
-</body>
+
 
 
 </html>

@@ -1,7 +1,7 @@
 <?php
 require_once "conection.class.php";
 
-class Product {
+class Product{
 
     use Conection;
 
@@ -185,7 +185,5 @@ class Product {
 
         }
     }
-
-    
 
 }

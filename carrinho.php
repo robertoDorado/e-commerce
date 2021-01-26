@@ -1,8 +1,31 @@
 <?php
+require_once "class/register_product.class.php";
 require_once "class/user.class.php";
 require_once "class/carrinho.class.php";
 $user = new User;
 $cart = new Cart;
+
+if(isset($_POST['qtd'], $_POST['id'])){
+
+    $id = $_POST['id'];
+    $qtd = $_POST['qtd'];
+
+    if(!isset($_SESSION['cart'][$id])){
+
+        if(isset($_SESSION['cart'][$id])){
+            
+            $_SESSION['cart'][$id] += $qtd;
+        }else{
+            $_SESSION['cart'][$id] = $qtd;
+        }
+    }
+
+}
+
+if(!isset($_SESSION['cart']) || (isset($_SESSION['cart']) && count($_SESSION['cart']) == 0)){
+
+    $_SESSION['cart'] = array();
+}
 
 if(isset($_SESSION['user_client'])){
 
@@ -12,8 +35,13 @@ if(isset($_SESSION['user_client'])){
     $user->getIdIpCostumer($id, $ip);
 
     if(isset($id) && !empty($id)){
+
         $data = $user->getUsersCostumers($id);
     }
+
+
+}else{
+    header("Location: index.php");
 }
 
 if(isset($_POST['email']) && isset($_POST['password'])){
@@ -31,7 +59,13 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 }
 ?>
 
-<!DOCTYPE html>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
+<!doctype html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
@@ -52,7 +86,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
-
     </head>
 
     <nav id="menu1" class="bar menu-principal bar-1 hidden-xs">
@@ -177,12 +210,12 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                 <a href="sair-client.php">Sair</a>
                                 <a href="carrinho.php"><i class="fa fa-shopping-cart select-cart"></i></a>
                                 <?php $items = $cart->getList();?>
-                                <?php if($items):?>
-                                    <span class="item-cart"><?php echo count($items); ?></span>
-                                <?php else:?>
-                                    <span class="item-cart">0</span>
+                                    <?php if($items):?>
+                                    <span class="item-cart"><?php echo count($items);?></span>
+                                    <?php else:?>
+                                        <span class="item-cart">0</span>
                                 <?php endif;?>
-                                <?php else: ?>
+                                    <?php else:?>
                                     <div class="bar__module">
                                     <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
                                         Faça o seu Login!
@@ -195,8 +228,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 </nav>
             </div>
         </div>
-
-        
 
         <style>
             .item-cart{
@@ -229,6 +260,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 transition:.5s;
             }
         </style>
+            
         <style>
             .bar .logo{
               max-height:4em !important;
@@ -250,382 +282,251 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         </style>
 
 <body class="dropdowns--hover" data-smooth-scroll-offset="77">
+            
 
-        
-
-          <section style="padding-bottom:0;" class="slider">
-                <div class="container-fluid reset-padding-margin">
-                    <div class="row">
-                        <div class="col reset-padding">
-                            <div class="slider slider--ken-burns" data-arrows="true" data-paging="true" data-timing="10000">
-                                <ul class="slides">
-                                    <li> <img alt="Image" src="img/banner/banner-1.jpg"> </li>
-                                    <li> <img alt="Image" src="img/banner/banner-2.jpg"> </li>
-                                    <li> <img alt="Image" src="img/banner/banner-3.jpg"> </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-          <style>
-              .reset-padding-margin{
-                padding:0;
-                margin:0;
-              }
-              .nav-link{
-                color:gray;
-              }
-              .slides img{
-                height:400px;
-              }
-              .reset-padding{
-                padding:0;
-              }
-              .slider{
-                  margin-top:53px;
-              }
-          </style>
-
-
-
-
-          <style>
-              .logo-img{
-                  width:400px;
-                  left:50%;
-                  right:50%;
-                  margin-left:auto;
-                  margin-right:auto;
-                  padding:0;
-              }
-              .dropdown-content{
-                  width:150px;
-                  height:auto;
-                  position:absolute;
-                  display:none;
-                  background-color:white;
-              } 
-              .show{
-                  display:block;
-              }
-              .dot{
-                  width:10px;
-                  height:10px;
-                  border:1px solid black;
-                  background:red;
-                  border-radius:5px;
-              }
-              .lista-filtro li{
-                  display:flex;
-                  margin:0;
-                  padding:0;
-              }
-          </style>
-
-
-
-          
-              
-            <style>
-            .lista-categoria li{
-                display:inline-block;
-                float:right;
-            }
-            .lista{
-                margin-right:120px;
-            }
-            .lista-categoria li button{
-                width:100px;
-            }
-            .lista-categoria li button:hover{
-                border:none;
-            }
-            </style>
-
-
-            <div class="boxed boxed--md container">
-                <form class="form--horizontal row"  action="#" method="POST">
-                <div class="col-md-5"></div>
-                    <div class="col-md-4">
-                        <div class="input-select">
-                            <select name="filtro" id="select_lancamento">
-                                <option value="0" disabled selected>Selecione uma Categoria</option>
-                                <option value="1" class="todos_produtos">Todos os Produtos</option>
-                                <option value="2" class="lancamento">Lançamento</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" name="buscar" id="buscar" placeholder="Buscar">
-                    </div>
-                    <!-- <div class="col-md-2">
-                        <button type="submit" class="btn btn--primary">Buscar</button>
-                    </div> -->
-                </form>
-            </div>
-
-            <section id="json-search" class="json-search">
+            <section class="space--xs imagebg select-imgbg" data-overlay="4">
+                <div class="background-image-holder bg-holder"> <img alt="background" src="img/recruitment-2.jpg"> </div>
                 <div class="container">
-                    <h2>Nossos Produtos</h2>
-                    <div class="row row-json">
-                      
+                    <div class="cta cta--horizontal text-center-xs row">
+                        <div class="col-md-12">
+                        <div class="caminho">
+                            <a href="index.php"><i class="fas fa-home select-home"></i></a><h4 class="h4-sub">/Carrinho de compras</h4>
+                        </div>
+                            <h1>Carrinho de Compras</h1>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <?php $items = $cart->getList();?>
+            <?php if($items):?>
+                <section style="display:none;">
+                <div class="container">
+                <div class="col-md-12">
+                    <h4>0 produtos no carrinho</h4>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 area"  align="center">
+                            <i class="fa fa-shopping-cart item" aria-hidden="true"></i>
+                            <p>Seu carrinho está vazio. Continue comprando para encontrar um produto!</p>
+                            <a class="btn btn-danger btn-compra" href="index.php">Continuar Comprando</a>
+                        </div>
+                    </div>  
+                </div>
+            </section>
+            <?php else:?>
+            <section>
+                <div class="container">
+                    <div class="col-md-12">
+                        <h4>0 produtos no carrinho</h4>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 area"  align="center">
+                            <i class="fa fa-shopping-cart item" aria-hidden="true"></i>
+                            <p>Seu carrinho está vazio. Continue comprando para encontrar um produto!</p>
+                            <a class="btn btn-danger btn-compra" href="index.php">Continuar Comprando</a>
+                        </div>
+                    </div>  
+                </div>
+            </section>
+            <?php endif;?>
 
-        
+            <?php if($items):?>
+                <div style="margin-top:20px;" class="container">
+                    <h2>Seu Carrinho</h2>
+                </div>
+                <section style="padding-top:0;">
+                    <div class="container">
+                        <?php foreach($items as $cartItem):?>
+                        <div class="col-md-12">
+                        <div class="area-product row">
+                            <img src="arquivoproduto/<?php echo $cartItem['img']; ?>" alt="produto-meraki">
+                            <div class="text-product">
+                                <h4><?php echo $cartItem['title'];?></h4>
+                                <div class="description-product">
+                                    <p><?php echo $cartItem['description'];?></p>
+                                </div>
+                            </div>
+                            <div class="links">
+                                <a class="btn btn-danger btn-remover" href="<?php echo "unset-cart.php?id=".$cartItem['id']; ?>">Remover do Carrinho</a>
+                                <div class="item-price-tag">
+                                    <span class="price-item"><?php echo $cartItem['price']; ?></span>
+                                    <i class="fas fa-tags tag-price"></i>
+                                    <span class="qtd-product">Qtd: <?php echo $cartItem['qtd'];?></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach;?>
+                    <div class="campo-subtotal">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="subtotal"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="#" style="border:none;" class="btn btn-success">Comprar agora!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                <?php else:?>
+            <section style="display:none;">
+                <div class="container">
+                    <div class="col-md-12">
+                        <h4>Seu Carrinho</h4>
+                        <div class="area-product row">
+                            <img src="arquivoproduto/agency-1.jpg" alt="produto-meraki">
+                            <div class="text-product">
+                                <h4>Titulo do Produto</h4>
+                                <div class="description-product">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                            </div>
+                            <div class="links">
+                                <a class="btn btn-danger btn-remover" href="#">Remover do Carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <?php endif;?>
+
+            <style>
+                .subtotal{
+                    color:#ec5252;
+                    font-weight:bold;
+                    font-size:20px;
+                    float:right;
+                    padding-top:17px;
+                }
+                .campo-subtotal{
+                    padding-top:20px;
+                }
+            </style>
 
             <script>
-                const xhttp = new XMLHttpRequest;
+                const xmlCart = new XMLHttpRequest;
 
-                xhttp.onreadystatechange = function() {
-                    if(xhttp.readyState == 4 && xhttp.status == 200){
-                        const jsonProducts = JSON.parse(xhttp.response)
-                        jsonProducts.map(($products, $indexP) => {
-                            const divColMd4 = document.createElement('div')
-                            const divFeatureFeatureSmall = document.createElement('div')
-                            const divFeatureBody = document.createElement('div')
-                            const divDescriptionProduct = document.createElement('div')
-                            const imgElement = document.createElement('img')
-                            const h5Element = document.createElement('h5')
-                            const pElement = document.createElement('p')
-                            const linkProduct = document.createElement('a')
-                            const spanElement = document.createElement('span')
-                            const strongTagProduct = document.createElement('strong')
-                            const pTagPriceProduct = document.createElement('p')
-                            const spanElementSearch = document.createElement('span')
+                xmlCart.onreadystatechange = () => {
+                    if(xmlCart.readyState == 4 && xmlCart.status == 200){
 
-                            const rowJson = document.querySelector('.row-json')
-                            rowJson.appendChild(divColMd4)
-                            divColMd4.append(divFeatureFeatureSmall)
-                            divFeatureFeatureSmall.append(imgElement)
-                            divFeatureFeatureSmall.append(divFeatureBody)
-                            divFeatureBody.append(h5Element)
-                            divFeatureBody.append(divDescriptionProduct)
-                            divDescriptionProduct.append(pElement)
-                            divFeatureBody.append(strongTagProduct)
-                            divFeatureBody.append(linkProduct)
-                            divFeatureBody.append(spanElement)
-                            strongTagProduct.append(pTagPriceProduct)
-                            h5Element.append(spanElementSearch)
-                            
+                        const objectCart = JSON.parse(xmlCart.response)
+                        
+                        let subtotal = 0
 
-                            divColMd4.classList.add('col-md-4')
-                            divFeatureFeatureSmall.classList.add('feature')
-                            divFeatureFeatureSmall.classList.add('feature-1')
-                            divFeatureBody.classList.add('feature__body')
-                            divFeatureBody.classList.add('boxed')
-                            divFeatureBody.classList.add('boxed--border')
-                            divDescriptionProduct.classList.add('description--product')
-                            spanElement.classList.add('label')
-                            spanElement.style.zIndex = '0'
-                            
-                            spanElement.innerHTML = $products.novo_produto
-                            spanElementSearch.innerHTML = $products.titulo_produto
-                            pElement.innerHTML = $products.descricao_produto
+                        objectCart.map(($objectCart) => {
 
-                            linkProduct.innerHTML = 'Saiba mais'
-                            linkProduct.style.textDecoration = 'none'
-                            divColMd4.addEventListener('click', () => {
-                                window.location.href = `produto.php?id=${$products.id}`
-                            })
-                            divColMd4.style.cursor = 'pointer'
-                            // linkProduct.setAttribute('href', `produto.php?id=${$products.id}`)
+                            let price = $objectCart.price.substr(2)
 
-                            pTagPriceProduct.innerHTML = $products.preco_produto
+                            price = price.replace(".", "")
 
+                            price = price.replace(",", ".")
 
+                            price = parseFloat(price)
 
-                            if(!$products.novo_produto){
-                                spanElement.style.display = 'none'
-                            }
+                            let qtd = parseInt($objectCart.qtd)
 
-                            if($products.img_produto == ''){
-                                imgElement.src = 'arquivoproduto/default-image.png'
-                            }else{
-                                imgElement.src = `arquivoproduto/${$products.img_produto}`
-                            }
-
-                            if($products.status_produto == 0){
-                                divColMd4.style.display = 'none'
-                            }
-                            
-                            
-
-                            const inpSearch = document.getElementById('buscar')
-                            h5Element.setAttribute('class', 'titulo_produto')
-                            spanElementSearch.setAttribute('class', 'span_titulo_search')
-
-                            inpSearch.addEventListener('input', ($item) => {
-
-                            // Declare variables
-                            let filter, section, colSearch, span, i, txtValue;
-                                filter = $item.target.value.toLowerCase()
-                                section = document.getElementById("json-search");
-                                colSearch = section.getElementsByClassName('col-md-4');
-
-                                // Loop through all list items, and hide those who don't match the search query
-                                for (i = 0; i < colSearch.length; i++) {
-                                    span = colSearch[i].getElementsByClassName("span_titulo_search")[0];
-                                    txtValue = span.textContent || span.innerText;
-                                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                                        colSearch[i].style.display = "";
-                                    } else {
-                                        colSearch[i].style.display = "none";
-                                    }
-                                }
-                            })
-
-                        const inpChange = document.querySelector('#select_lancamento')
-                        const optionTodosOsProdutos = document.querySelector('.todos_produtos')
-                        const lancamento = document.querySelector('.lancamento')
-
-                        inpChange.addEventListener('change', ($select) => {
-
-                            if($select.target.value == "2"){
-
-                                document.querySelectorAll(".label").forEach(($label) => {
-
-                                    if($label.style.display == "none"){
-
-                                        $label.classList.add("remove")
-
-                                        document.querySelectorAll(".remove").forEach(($item) => {
-                                            $item.parentNode.parentNode.parentNode.style.display = 'none'
-                                        })
-                                    
-                                    }
-                                })
-                            }else if($select.target.value == "1"){
-                                document.querySelectorAll(".remove").forEach(($item) => {
-                                    $item.parentNode.parentNode.parentNode.style.display = 'block'
-                                })
-                            }
+                            subtotal += (price * qtd)
 
                         })
-                    })
-                }
-            }
-            
-            xhttp.open("GET", `http://localhost/projetos/e-commerce/class/json_new_product.class.php`)
-            xhttp.send()
-            </script>
 
-            
-
-            <style>
-                .description--product{
-                    height:86px;
-                    overflow-y:hidden;
-                }
-                .vitrine-vazia{
-                    padding-bottom:0;
-                    padding-top:0;
-                }
-                .description--product p{
-                    text-align:justify;
-                }
-                .json-search{
-                    padding-top:0;
-                    padding-bottom:0;
-                }
-            </style>
-
-              
-
-            <style>
-                .section-miniaturas{
-                  padding-top:60px;
-                  padding-bottom:0;
-                }
-                .card__top{
-                    border:1px solid #ececec;
-                    border-bottom:none;
-                }
-                .card-2{
-                    -webkit-box-shadow: -1px 5px 15px -9px #000000; 
-                    box-shadow: -1px 5px 15px -9px #000000;
-                    border-radius:5px;
-                }
-            </style>
-                
-                
-                
-
-            
-
-
-
-            <section style="padding-top:0;" class="switchable switchable--switch">
-                <div class="container">
-                    <div class="row justify-content-between">
-                        <div class="col-md-6 col-lg-5">
-                            <div class="switchable__text">
-                                <h2>Entre em contato com a nossa equipe<br class="hidden-xs hidden-sm"> estamos a sua disposição</h2>
-                                <p class="lead"> Nossa equipe estará sempre disposta a atendelo referente aos nossos produtos e dúvidas em geral. </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="bg--secondary boxed boxed--border boxed--lg">
-                                <form method="POST" action="PHPMailer/enviar_email.php" action="//mrare.us8.list-manage.com/subscribe/post?u=77142ece814d3cff52058a51f&amp;id=f300c9cce8" data-success="Obrigado por entrar em contato conosco, logo a nossa equipe irá retornar o contato" data-error="Por favor, preencha todos os campos em branco">
-                                    <input class="validate-required" type="text" name="nome" placeholder="Seu nome"> 
-                                    <input class="validate-required validate-email" type="email" name="email" placeholder="E-mail" required>
-                                    <input data-js="telefone" class="validate-required validate-email" type="text" name="telefone" placeholder="Telefone" required>
-                                    <input data-js="celular" class="validate-required validate-email" type="text" name="celular" placeholder="Celular" required>
-                                    <input type="hidden" name="fTxtNomeH">
-                                    <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> 
-                                    <button type="submit" class="btn btn--primary type--uppercase btn-enviar">Enviar</button>
-                                    <div style="position: absolute; left: -5000px" aria-hidden="true"> <input type="text" name="b_77142ece814d3cff52058a51f_f300c9cce8" tabindex="-1"> </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <script>
-                const masks = {
-                    telefone(value){
-                        return value
-                        .replace(/\D/g, '')
-                        .replace(/(\d{2})(\d)/, '($1) $2')
-                        .replace(/(\d{4})(\d)/, '$1-$2')
-                        .replace(/-(\d{4})\d+?$/, '-$1')
-                    },
-                    celular(value){
-                        return value
-                        .replace(/\D/g, '')
-                        .replace(/(\d{2})(\d)/, '($1) $2')
-                        .replace(/(\d{5})(\d)/, '$1-$2')
-                        .replace(/-(\d{4})\d+?$/, '-$1')
+                        let brlMoneyFormat = subtotal.toLocaleString('pt-br', {minimumFractionDigits: 2});
+                        
+                        document.querySelector('.subtotal').innerHTML = `Subtotal: R$ ${brlMoneyFormat}`
                     }
                 }
-                
-                document.querySelectorAll('input').forEach(($input) => {
-                    const field = $input.dataset.js
 
-                    $input.addEventListener('input', (e) => {
-                        e.target.value = masks[field](e.target.value)
-                    }, false)
-                })
+                xmlCart.open('GET', 'http://localhost/projetos/e-commerce/class/json_cart.class.php')
+                xmlCart.send()
             </script>
 
+           
+
             <style>
-                .btn-enviar{
-                    background:black;
+                .qtd-product{
+                    float:right;
+                    color:#ec5252;
+                    font-weight:bold;
                 }
-                .btn-enviar:hover{
-                    background:none;
-                    border:1px solid black;
-                    color:black !important;
+                .item-price-tag{
+                    margin-top:10px;
                 }
-                textarea{
-                    margin-top:20px;
-                    margin-bottom:20px;
-                    height:100px;
+                .tag-price{
+                    color:#ec5252;
+                }
+                .price-item{
+                    color:#ec5252;
+                    font-weight:bold;
+                    font-size:20px;
+                }
+                .links a{
+                    display:block;
+                    margin:0 !important;
+                    margin-top:20px !important;
+                }
+                .btn-adicionar{
+                    color:white;
+                    border:none;
+                }
+                .btn-remover{
+                    border:none;
+                }
+                .description-product{
+                    overflow:hidden;
+                    height:70px;
+                    width:500px;
+                    margin:0;
+                }
+                .text-product{
+                    margin-left:50px;
+                }
+                .text-product h4{
+                    margin-top:1%;
+                }
+                .area-product{
+                    width:100%;
+                    height:150px;
+                    border: 1px solid #e8e9eb;
+                    border-radius:5px;
+                }
+                .area-product img{
+                    height:100%;
+                    width:250px;
+                }
+                .btn-compra{
+                    border:none;
+                }
+                .area{
+                    width:100%;
+                    height:270px;
+                    border: 1px solid #e8e9eb;
+                    border-radius:5px;
+                }
+                .item{
+                    font-size:120px;
+                    margin-top:2%;
+                    color:#e8e9eb;
+                }
+            </style>
+
+            <style>
+                .h4-sub{
+                    margin-left:10px !important;
+                }
+                .select-home{
+                    font-size:20px;
+                    color:#ffff;
+                    margin-top:5px;
+                }
+                .caminho{
+                    display:flex;
+                }
+                .select-imgbg{
+                    margin-top:100px;
+                    z-index:1;
+                }
+                .select-imgbg .bg-holder{
+                    background-position: 100% 21% !important;
                 }
             </style>
 
