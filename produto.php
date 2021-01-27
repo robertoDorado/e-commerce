@@ -176,11 +176,13 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                 </div>
                                 <a href="sair-client.php">Sair</a>
                                 <a href="carrinho.php"><i class="fa fa-shopping-cart select-cart"></i></a>
+                                <?php if(isset($_SESSION['cart'])):?>
                                 <?php $items = $cart->getList(); ?>
                                 <?php if($items):?>
                                     <span class="item-cart"><?php echo count($items);?></span>
                                 <?php else: ?>
                                     <span class="item-cart">0</span>
+                                <?php endif; ?>
                                 <?php endif; ?>
                                 <?php else: ?>
                                     <div class="bar__module">
@@ -292,6 +294,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                 <div class="col-md-6 col-lg-4"> 
                                 <input type="text" class="qtd" name="qtd" placeholder="QTD" readonly></div>
                                 <input type="hidden" name="id" value="<?php echo $_GET["id"];?>">
+                                <input type="hidden" name="ip" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
                                 <div style="display:flex;margin-left:16px;padding-bottom:20px;">
                                     <a href="#" style="color:white;" class="btn btn--primary btn-increment">+</a>
                                     <a href="#" style="color:white;" class="btn btn--primary btn-decrement">-</a>

@@ -10,8 +10,9 @@ if(isset($_POST['qtd'], $_POST['id'])){
     $id = $_POST['id'];
     $qtd = $_POST['qtd'];
 
+    
     if(!isset($_SESSION['cart'][$id])){
-
+        
         if(isset($_SESSION['cart'][$id])){
             
             $_SESSION['cart'][$id] += $qtd;
@@ -298,7 +299,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 </div>
             </section>
 
-            <?php $items = $cart->getList();?>
+            <?php $items = $cart->getList(); ?>
             <?php if($items):?>
                 <section style="display:none;">
                 <div class="container">
@@ -334,7 +335,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 <section style="padding-top:0;">
                     <div class="container">
                         <?php foreach($items as $cartItem):?>
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="margin-top:10px;">
                         <div class="area-product row">
                             <img src="arquivoproduto/<?php echo $cartItem['img']; ?>" alt="produto-meraki">
                             <div class="text-product">
@@ -344,7 +345,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                 </div>
                             </div>
                             <div class="links">
-                                <a class="btn btn-danger btn-remover" href="<?php echo "unset-cart.php?id=".$cartItem['id']; ?>">Remover do Carrinho</a>
+                                <a class="btn btn-danger btn-remover" href="<?php echo "unset-cart.php?id=".$cartItem['id']."&qtd=".$cartItem['qtd']; ?>">Remover do Carrinho</a>
                                 <div class="item-price-tag">
                                     <span class="price-item"><?php echo $cartItem['price']; ?></span>
                                     <i class="fas fa-tags tag-price"></i>

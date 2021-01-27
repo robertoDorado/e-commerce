@@ -22,30 +22,46 @@ class Cart{
     public function getList(){
         $array = array();
         $cart = $_SESSION['cart'];
+        
+        if(!empty($cart)){
+            
+            foreach($cart as $id => $qtd){
+                
+                if($this->getProductInfo($id)){
+                    
+                $info = $this->getProductInfo($id);
+    
+                $array[] = array(
+                    'id' => $id,
+                    'qtd' => $qtd,
+                    'title' => utf8_encode($info['titulo_produto']),
+                    'price' => $info['preco_produto'],
+                    'img' => $info['img_produto'],
+                    'description' => utf8_encode($info['descricao_produto']),
+                );
+            }
 
-        foreach($cart as $id => $qtd){
-
-        if($this->getProductInfo($id) != null){
-
-            $info = $this->getProductInfo($id);
-
-            $array[] = array(
-                'id' => $id,
-                'qtd' => $qtd,
-                'title' => utf8_encode($info['titulo_produto']),
-                'price' => $info['preco_produto'],
-                'img' => $info['img_produto'],
-                'description' => utf8_encode($info['descricao_produto'])
-            );
         }
         
+    }else{
+
+        $cart = array();
     }
         return $array;
     }
 
-    public function delCartItem($id){
+    public function delCartItem($id, $qtd){
         if(isset($id)){
             unset($_SESSION['cart'][$id]);
+            
+            $resultQtd = $qtd - 1;
+            
+            $_SESSION['cart'][$id] = $resultQtd;
+            
+            if($resultQtd == 0){
+
+                unset($_SESSION['cart'][$id]);
+            }
         }
     }
 }
