@@ -7,7 +7,7 @@ class Cart{
     private function getProductInfo($id){
         $array = array();
 
-        $sql = "SELECT titulo_produto, preco_produto, img_produto, descricao_produto FROM register_product WHERE id = :id";
+        $sql = "SELECT * FROM register_product WHERE id = :id";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":id", $id);
         $sql->execute();
@@ -38,6 +38,12 @@ class Cart{
                     'price' => $info['preco_produto'],
                     'img' => $info['img_produto'],
                     'description' => utf8_encode($info['descricao_produto']),
+                    'weight' => $info['weight'],
+                    'width' => $info['width'],
+                    'height' => $info['height'],
+                    'length' => $info['length'],
+                    'diameter' => $info['diameter']
+
                 );
             }
 
@@ -63,5 +69,75 @@ class Cart{
                 unset($_SESSION['cart'][$id]);
             }
         }
+    }
+
+    public function calcularFrete($cepDestino){
+
+        $list = $this->getList();
+
+        $nVlPeso = 0;
+        $nVlLargura = 0;
+        $nVlComprimento = 0;
+        $nVlAltura = 0;
+        $nVlDiametro = 0;
+        $nVlValorDeclarado = 0;
+
+
+        foreach($list as $item){
+
+            $price = $item['price'];
+            $priceFormat1 = str_replace("R$", "", $price);
+            $priceFormat2 = floatval(str_replace(",", ".", $priceFormat1));
+
+            $nVlPeso += floatval($item['weight']);
+            $nVlComprimento += floatval($item['length']);
+            $nVlLargura += floatval($item['width']);
+            $nVlAltura += floatval($item['height']);
+            $nVlDiametro += floatval($item['diameter']);
+            $nVlValorDeclarado += ($priceFormat2 * $item['qtd']);
+        }
+
+        $soma = $nVlLargura + $nVlAltura + $nVlComprimento;
+
+        if($soma > 200) {
+            $nVlLargura = 66;
+            $nVlComprimento = 66;
+            $nVlAltura = 66;
+        }
+        
+        if($nVlDiametro > 90){
+            $nVlDiametro = 90;
+        }
+
+        if($nVlPeso > 50){
+            $nVlPeso = 50;
+        }
+
+        if($nVlValorDeclarado > 3000){
+            $nVlValorDeclarado = 3000;
+        }
+
+
+        $url = 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?';
+        $url .= 'nCdEmpresa=';
+        $url .= '&nDsSenha=';
+        $url .= '&sCepOrigem=' . $this->cepOrigem;
+        $url .= '&sCepDestino=' . $cepDestino;
+        $url .= '&nVlPeso=' . $nVlPeso;
+        $url .= '&nVlLargura=' . $nVlLargura;
+        $url .= '&nVlAltura=' . $nVlAltura;
+        $url .= '&nCdFormato=1';
+        $url .= '&nVlComprimento=' . $nVlComprimento;
+        $url .= '&sCdMaoPropria=n';
+        $url .= '&nVlValorDeclarado=' . $nVlValorDeclarado;
+        $url .= '&sCdAvisoRecebimento=n';
+        $url .= '&nCdServico=41106';
+        $url .= '&nVlDiametro=' . $nVlDiametro;
+        $url .= '&StrRetorno=xml';
+
+        $xml = simplexml_load_file($url);
+
+
+        return $xml->cServico;
     }
 }

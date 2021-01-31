@@ -5,6 +5,15 @@ require_once "class/carrinho.class.php";
 $user = new User;
 $cart = new Cart;
 
+if(isset($_POST['cep'])){
+        
+    $cep = $_POST['cep'];
+
+    $cepFormat = str_replace("-", "", $cep);
+
+    $frete = $cart->calcularFrete($cepFormat);
+}
+
 if(isset($_POST['qtd'], $_POST['id'])){
 
     $id = $_POST['id'];
@@ -355,14 +364,46 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                         </div>
                     </div>
                     <?php endforeach;?>
-                    <div class="campo-subtotal">
-                        <div class="row">
-                            <div class="col-md-6">
+                    <div class="container">
+                        <div class="row" style="padding-top:10px;">
+                            <div class="col-md-12 col-xs-12 col-12 col-sm-12" align="center">
                                 <span class="subtotal"></span>
                             </div>
-                            <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+
+                <?php if(isset($_POST['cep'])):?>
+                <div class="container">
+                    <div class="row" style="padding-top:10px;">
+                        <div class="col-md-12 col-xs-12 col-12 col-sm-12" align="center">
+                            <span class="frete">Frete: <?php echo "R$ ".$frete->Valor;?></span>
+                        </div>
+                    </div>
+                        <div class="row" style="padding-top:10px;">
+                            <div class="col-md-12 col-xs-12 col-12 col-sm-12" align="center">
+                                <span class="total"></span>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:10px;">
+                            <div class="col-md-12 col-xs-12 col-12 col-sm-12" align="center">
                                 <a href="#" style="border:none;" class="btn btn-success">Comprar agora!</a>
                             </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form method="POST">
+                            <div class="form-group">
+                                <h4 style="margin-bottom:20px;">Calculo do frete</h4>
+                                <label for="cep">Seu CEP:</label><br>
+                                <input data-js="cep" style="width:200px;" class="form-control select-input-cep" type="text" name="cep" id="cep">
+                                <button style="border:0; width:200px;" class="btn btn-danger form-control" type="submit">Calcular</button>
+                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -392,16 +433,43 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             </section>
             <?php endif;?>
 
+            <script>
+                const masks = {
+                    cep(value){
+                        return value
+                        .replace(/\D/g, '')
+                        .replace(/(\d{5})(\d)/, '$1-$2')
+                        .replace(/(-\d{3})\d+?$/, '$1')
+                    }
+                }
+
+                document.querySelectorAll('input').forEach(($input) => {
+                    const field = $input.dataset.js
+                    $input.addEventListener('input', (e) => {
+                        e.target.value = masks[field](e.target.value)
+                    }, false)
+                })
+            </script>
+
+            
             <style>
                 .subtotal{
                     color:#ec5252;
                     font-weight:bold;
                     font-size:20px;
-                    float:right;
                     padding-top:17px;
                 }
-                .campo-subtotal{
-                    padding-top:20px;
+                .frete{
+                    color:#ec5252;
+                    font-weight:bold;
+                    font-size:20px;
+                    padding-top:17px;
+                }
+                .total{
+                    color:#ec5252;
+                    font-weight:bold;
+                    font-size:20px;
+                    padding-top:17px;
                 }
             </style>
 
@@ -434,12 +502,29 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                         let brlMoneyFormat = subtotal.toLocaleString('pt-br', {minimumFractionDigits: 2});
                         
                         document.querySelector('.subtotal').innerHTML = `Subtotal: R$ ${brlMoneyFormat}`
+
+                        const stringFrete = document.querySelector('.frete').innerText
+
+                        let numberFormatFrete = stringFrete.substr(9);
+
+                        numberFormatFrete = numberFormatFrete.replace(",", ".")
+
+                        numberFormatFrete = parseFloat(numberFormatFrete)
+
+                        let totalAPagarPelaCompra = subtotal + numberFormatFrete
+
+                        const brlFormatTotalAPagar = totalAPagarPelaCompra.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+                        document.querySelector('.total').innerHTML = `Total: R$ ${brlFormatTotalAPagar}`
                     }
                 }
 
                 xmlCart.open('GET', 'http://localhost/projetos/e-commerce/class/json_cart.class.php')
                 xmlCart.send()
             </script>
+
+
+            
 
            
 

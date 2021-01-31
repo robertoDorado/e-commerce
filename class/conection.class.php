@@ -6,6 +6,7 @@ trait Conection {
     private $dbUser = "root";
     private $host = "127.0.0.1";
     private $pdo;
+    private $cepOrigem = 2723050;
     
     function __construct(){
         try{
