@@ -377,7 +377,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 <div class="container">
                     <div class="row" style="padding-top:10px;">
                         <div class="col-md-12 col-xs-12 col-12 col-sm-12" align="center">
-                            <span class="frete">Frete: <?php echo "R$ ".$frete->Valor;?></span>
+                            <span class="frete">Frete: <?php echo "R$ ".$frete->Valor." ($frete->PrazoEntrega dias)";?></span>
                         </div>
                     </div>
                         <div class="row" style="padding-top:10px;">
@@ -387,11 +387,20 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                         </div>
                         <div class="row" style="padding-top:10px;">
                             <div class="col-md-12 col-xs-12 col-12 col-sm-12" align="center">
-                                <a href="#" style="border:none;" class="btn btn-success">Comprar agora!</a>
+                                <form action="formas-de-pagamento.php" method="POST">
+                                    <select name="pagamentos" id="pagamentos" style="width:30%;">
+                                        <option value="0" disabled selected>Selecione uma forma de pagamento</option>
+                                        <option value="checkout_transparente">PagSeguro Checkout Transparente</option>
+                                    </select><br>
+                                    <button style="width:30%;border:none;margin-top:10px;" type="submit" class="btn btn-success">Comprar agora!</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 <?php endif; ?>
+                
+                
+                
                 
                 <div class="container">
                     <div class="row">
@@ -480,6 +489,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                     if(xmlCart.readyState == 4 && xmlCart.status == 200){
 
                         const objectCart = JSON.parse(xmlCart.response)
+
+                        console.log(objectCart)
                         
                         let subtotal = 0
 

@@ -1,0 +1,151 @@
+
+01/02/2021 20:49:09 PagSeguro.Session[info]: Begin
+01/02/2021 20:49:10 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 20:49:16 PagSeguro.Session[info]: Session ID: b82f9785eaf84643a1988227e896ca35
+01/02/2021 20:59:01 PagSeguro.Session[info]: Begin
+01/02/2021 20:59:01 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 20:59:07 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+01/02/2021 20:59:37 PagSeguro.Session[info]: Begin
+01/02/2021 20:59:37 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 20:59:43 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+01/02/2021 20:59:46 PagSeguro.Session[info]: Begin
+01/02/2021 20:59:46 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 20:59:51 PagSeguro.Session[info]: Session ID: 52a1c200d1d4452c8ddd1bceca8eac14
+01/02/2021 21:01:32 PagSeguro.Session[info]: Begin
+01/02/2021 21:01:32 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 21:01:37 PagSeguro.Session[info]: Session ID: 7fa9d390585244339fcd8d4a5a801530
+01/02/2021 22:04:59 PagSeguro.Session[info]: Begin
+01/02/2021 22:04:59 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:05:05 PagSeguro.Session[info]: Session ID: d287c06b324649f9b74e3d3843fb40bd
+01/02/2021 22:05:44 PagSeguro.Session[info]: Begin
+01/02/2021 22:05:44 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:05:50 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+01/02/2021 22:05:54 PagSeguro.Session[info]: Begin
+01/02/2021 22:05:54 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:05:59 PagSeguro.Session[info]: Session ID: e811f21ed34944d2b48363799a2abcdc
+01/02/2021 22:07:00 PagSeguro.Session[info]: Begin
+01/02/2021 22:07:00 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:07:06 PagSeguro.Session[info]: Session ID: 4dd728034fe24de4bc28e716114834b4
+01/02/2021 22:08:09 PagSeguro.Session[info]: Begin
+01/02/2021 22:08:09 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:08:14 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+01/02/2021 22:08:18 PagSeguro.Session[info]: Begin
+01/02/2021 22:08:18 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:08:23 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+01/02/2021 22:08:28 PagSeguro.Session[info]: Begin
+01/02/2021 22:08:28 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:08:34 PagSeguro.Session[info]: Session ID: a1c13822fe964bb8a9953071d4636f63
+01/02/2021 22:09:13 PagSeguro.Session[info]: Begin
+01/02/2021 22:09:13 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:09:18 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+01/02/2021 22:09:22 PagSeguro.Session[info]: Begin
+01/02/2021 22:09:22 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:09:28 PagSeguro.Session[info]: Session ID: c5f5f0aa4bcc45f1bf36eab599f306ed
+01/02/2021 22:09:53 PagSeguro.Session[info]: Begin
+01/02/2021 22:09:53 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:09:59 PagSeguro.Session[info]: Session ID: 3bbd0ced67e54391b793ea64b4148787
+01/02/2021 22:12:51 PagSeguro.Session[info]: Begin
+01/02/2021 22:12:51 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:12:57 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+01/02/2021 22:13:14 PagSeguro.Session[info]: Begin
+01/02/2021 22:13:14 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:13:20 PagSeguro.Session[info]: Session ID: f7ef4b4764074b4baebed396f812e48d
+01/02/2021 22:14:40 PagSeguro.Session[info]: Begin
+01/02/2021 22:14:40 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:14:46 PagSeguro.Session[info]: Session ID: 4f8329b0cdee48268b8d5a98c49cd4d0
+01/02/2021 22:15:52 PagSeguro.Session[info]: Begin
+01/02/2021 22:15:52 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:15:58 PagSeguro.Session[info]: Session ID: f61bbd8850734210bedac8fda6a81bed
+01/02/2021 22:16:24 PagSeguro.Session[info]: Begin
+01/02/2021 22:16:24 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:16:30 PagSeguro.Session[info]: Session ID: 7ad31b904d2544a9bd910de86fa2239d
+01/02/2021 22:16:53 PagSeguro.Session[info]: Begin
+01/02/2021 22:16:53 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:16:58 PagSeguro.Session[info]: Session ID: 93b14202b2ab4dfaaa05cdedfa53f35e
+01/02/2021 22:17:47 PagSeguro.Session[info]: Begin
+01/02/2021 22:17:47 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:17:54 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+01/02/2021 22:18:06 PagSeguro.Session[info]: Begin
+01/02/2021 22:18:06 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:18:11 PagSeguro.Session[info]: Session ID: 581b596d49d44281b1a61549bad94e65
+01/02/2021 22:18:30 PagSeguro.Session[info]: Begin
+01/02/2021 22:18:30 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:18:36 PagSeguro.Session[info]: Session ID: d8234934f7ac49bd9e44c69ab2ac319e
+01/02/2021 22:18:51 PagSeguro.Session[info]: Begin
+01/02/2021 22:18:51 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:18:57 PagSeguro.Session[info]: Session ID: 2e5106f298d74c1397961b66fabd63ee
+01/02/2021 22:19:12 PagSeguro.Session[info]: Begin
+01/02/2021 22:19:12 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:19:18 PagSeguro.Session[info]: Session ID: 43055c9941a04ce18a718e31e00daf94
+01/02/2021 22:24:38 PagSeguro.Session[info]: Begin
+01/02/2021 22:24:38 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:24:44 PagSeguro.Session[info]: Session ID: 12fdaa272d2e49c483e390169a6bb35c
+01/02/2021 22:27:40 PagSeguro.Session[info]: Begin
+01/02/2021 22:27:40 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:27:46 PagSeguro.Session[info]: Session ID: bce75152ed054403b21dd7d0546db21a
+01/02/2021 22:29:58 PagSeguro.Session[info]: Begin
+01/02/2021 22:29:58 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:30:04 PagSeguro.Session[info]: Session ID: 02994eed762b485390274d23c69e4df3
+01/02/2021 22:30:24 PagSeguro.Session[info]: Begin
+01/02/2021 22:30:24 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:30:30 PagSeguro.Session[info]: Session ID: 96e5dc2d77e94d5ba87da27a2797bdc3
+01/02/2021 22:30:58 PagSeguro.Session[info]: Begin
+01/02/2021 22:30:58 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:31:04 PagSeguro.Session[info]: Session ID: 1fd164840f4a4bff89667ab390e675a6
+01/02/2021 22:33:27 PagSeguro.Session[info]: Begin
+01/02/2021 22:33:27 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:33:32 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+01/02/2021 22:33:35 PagSeguro.Session[info]: Begin
+01/02/2021 22:33:35 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:33:41 PagSeguro.Session[info]: Session ID: 5ad715458cf34a5b944a140c94be7326
+01/02/2021 22:33:56 PagSeguro.Session[info]: Begin
+01/02/2021 22:33:56 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:34:01 PagSeguro.Session[info]: Session ID: a6632c8cad064a8ea7da63f7eb59519e
+01/02/2021 22:34:18 PagSeguro.Session[info]: Begin
+01/02/2021 22:34:18 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:34:24 PagSeguro.Session[info]: Session ID: ca736e4b4c044c0ea793edc711dfa174
+01/02/2021 22:36:11 PagSeguro.Session[info]: Begin
+01/02/2021 22:36:11 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:36:17 PagSeguro.Session[info]: Session ID: 2e1d94fae8e4443caa4d752754f39f17
+01/02/2021 22:36:55 PagSeguro.Session[info]: Begin
+01/02/2021 22:36:55 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:37:01 PagSeguro.Session[info]: Session ID: 0bd3c3392b2c449fbf8a298ae1f545b7
+01/02/2021 22:39:10 PagSeguro.Session[info]: Begin
+01/02/2021 22:39:10 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:39:16 PagSeguro.Session[info]: Session ID: 18ab2cb2c50e4a638b3d5bd0fd0f16db
+01/02/2021 22:39:35 PagSeguro.Session[info]: Begin
+01/02/2021 22:39:36 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:39:41 PagSeguro.Session[info]: Session ID: e435ccf4286d4ad88e406ab250439e16
+01/02/2021 22:39:57 PagSeguro.Session[info]: Begin
+01/02/2021 22:39:57 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:40:03 PagSeguro.Session[info]: Session ID: 25c50b87c159476c961d054b6ef8e181
+01/02/2021 22:44:36 PagSeguro.Session[info]: Begin
+01/02/2021 22:44:36 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:44:42 PagSeguro.Session[info]: Session ID: 949327d7331c4bc2b8c760a11791cdd1
+01/02/2021 22:47:42 PagSeguro.Session[info]: Begin
+01/02/2021 22:47:42 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:47:48 PagSeguro.Session[info]: Session ID: 7ba7543f136247f58fb685444aac59d9
+01/02/2021 22:48:03 PagSeguro.Session[info]: Begin
+01/02/2021 22:48:03 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:48:09 PagSeguro.Session[info]: Session ID: 9b01838204f44b9984c0a2cb989fa20b
+01/02/2021 22:48:27 PagSeguro.Session[info]: Begin
+01/02/2021 22:48:27 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:48:33 PagSeguro.Session[info]: Session ID: 2159ccd20b98416fb0c8a14d59243b52
+01/02/2021 22:53:22 PagSeguro.Session[info]: Begin
+01/02/2021 22:53:22 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:53:28 PagSeguro.Session[info]: Session ID: da1f07d69ee24c2ea0e36cc1f01fc7e0
+01/02/2021 22:59:30 PagSeguro.Session[info]: Begin
+01/02/2021 22:59:30 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 22:59:36 PagSeguro.Session[info]: Session ID: 1b2d4454c63941008fd350f4c41c4138
+01/02/2021 23:00:10 PagSeguro.Session[info]: Begin
+01/02/2021 23:00:10 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 23:00:16 PagSeguro.Session[info]: Session ID: fba90f327a6c484eb100cc631133d6ef
+01/02/2021 23:00:51 PagSeguro.Session[info]: Begin
+01/02/2021 23:00:51 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 23:00:57 PagSeguro.Session[info]: Session ID: 0bd711baf9ba4931935bb322c46a3b12
+01/02/2021 23:02:03 PagSeguro.Session[info]: Begin
+01/02/2021 23:02:03 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 23:02:09 PagSeguro.Session[info]: Session ID: a8b1506de5ac4f8196445682ea3b0268
+01/02/2021 23:04:06 PagSeguro.Session[info]: Begin
+01/02/2021 23:04:06 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+01/02/2021 23:04:12 PagSeguro.Session[info]: Session ID: 2a7dd125a59f4b639bebc055421696cc

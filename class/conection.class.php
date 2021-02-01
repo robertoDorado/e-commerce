@@ -1,5 +1,4 @@
 <?php
-
 trait Conection {
 
     private $dbName = "meraki";
