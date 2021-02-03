@@ -32,10 +32,9 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     }
 }
 
-if(isset($_POST['pagamentos'])){
+if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
     try{
-
         $sessionCode = \PagSeguro\Services\Session::create(
             \PagSeguro\Configuration\Configure::getAccountCredentials()
         );
@@ -73,6 +72,7 @@ if(isset($_POST['pagamentos'])){
         <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
+        <script src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
 
     </head>
 
@@ -283,17 +283,17 @@ if(isset($_POST['pagamentos'])){
                         <h3>Preencha os dados de Pagamento</h3>
                         <div class="form-group">
                             <label for="nome">Nome Completo:</label><br>
-                            <input value="<?php echo $newData['nome']; ?>" style="width:300px;" class="form-control" type="text" name="nome" id="nome">
+                            <input value="Roberto Felipe Dorado Pena" style="width:300px;" class="form-control" type="text" name="nome" id="nome">
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email:</label><br>
-                            <input style="width:300px;" type="email" name="email" id="email" value="<?php echo $newData['email']; ?>">
+                            <input style="width:300px;" type="email" name="email" id="email" value="c34149393016125191405@sandbox.pagseguro.com.br">
                         </div>
 
                         <div class="form-group">
                             <label for="Cpf">CPF:</label><br>
-                            <input style="width:300px;" type="text" name="cpf" id="cpf">
+                            <input style="width:300px;" type="text" name="cpf" id="cpf" value="44257318830">
                         </div>
 
                         <div class="form-group">
@@ -306,22 +306,22 @@ if(isset($_POST['pagamentos'])){
                         <h3>Informações de Endereço:</h3>
                         <div class="form-group">
                             <label for="cep">CEP:</label><br>
-                            <input style="width:300px;" type="text" name="cep" id="cep">
+                            <input data-js="cep" style="width:300px;" type="text" name="cep" id="cep">
                         </div>
 
                         <div class="form-group">
                             <label for="rua">Rua:</label><br>
-                            <input style="width:300px;" type="text" name="rua" id="rua" readonly>
+                            <input style="width:300px;" type="text" name="rua" id="rua">
                         </div>
 
                         <div class="form-group">
                             <label for="bairro">Bairro:</label><br>
-                            <input style="width:300px;" type="text" name="bairro" id="bairro" readonly>
+                            <input style="width:300px;" type="text" name="bairro" id="bairro">
                         </div>
 
                         <div class="form-group">
                             <label for="numero">Número:</label><br>
-                            <input style="width:300px;" type="text" name="rua" id="rua">
+                            <input data-js="number" style="width:300px;" type="text" name="numero" id="numero">
                         </div>
 
                         <div class="form-group">
@@ -331,39 +331,244 @@ if(isset($_POST['pagamentos'])){
 
                         <div class="form-group">
                             <label for="cidade">Cidade:</label><br>
-                            <input style="width:300px;" type="text" name="cidade" id="cidade" readonly>
+                            <input style="width:300px;" type="text" name="cidade" id="cidade">
                         </div>
+
 
                         <div class="form-group">
                             <label for="estado">Estado:</label><br>
-                            <input style="width:300px;" type="text" name="estado" id="estado" readonly>
+                            <input style="width:300px;" type="text" name="estado" id="estado">
                         </div>
+
+                        <button id="btn-cep" style="150px;border:none;padding-left:20px;padding-right:20px;" class="btn btn-primary">Buscar Endereço</button><br><br>
 
                         <h3>Informações de Pagamento:</h3>
                         <div class="form-group">
-                            <label for="cartao">Número do Cartão:</label><br>
-                            <input style="width:300px;" type="text" name="cartao" id="cartao">
+                            <label for="cartao-nome">Nome do titular do Cartão:</label><br>
+                            <input value="João da Silva" style="width:300px;" type="text" name="cartao-nome" id="cartao-nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cartao-numero">Número do Cartão:</label><br>
+                            <input style="width:300px;" type="text" name="cartao-numero" id="cartao-numero">
                         </div>
 
                         <div class="form-group">
                             <label for="codigo">Código de seguraça: <small>(Fica no verso do cartão)</small></label><br>
-                            <input style="width:300px;" type="text" name="codigo" id="codigo">
+                            <input data-js="cvv" style="width:300px;" type="text" name="codigo" id="codigo">
                         </div>
 
                         <div class="form-group">
-                            <label for="validade">Validade:</label><br>
-                            <select style="width:300px" name="validade" id="validade"></select>
+                            <label for="mes">Mês:</label><br>
+                            <select style="width:300px" name="mes" id="mes"></select>
                         </div>
+
+                        <div class="form-group">
+                            <label for="ano">Ano:</label><br>
+                            <select style="width:300px" name="ano" id="ano"></select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parcela">Selecione uma Parcela:</label><br>
+                            <select style="width:300px" name="parcela" id="parcela"></select>
+                        </div>
+
+                        <button style="150px;border:none;padding-left:20px;padding-right:20px;" id="get-btn-submit" class="btn btn-success">Efetuar Compra</button>
                     </form>
                     <?php endforeach; ?>
                     <?php endif;?>
                 </div>
             </div>
         </div>
+        
+        <script>
+            PagSeguroDirectPayment.setSessionId("<?php echo $dados['sessionCode']; ?>")
+            document.getElementById('get-btn-submit').addEventListener('click', (btn) => {
+                btn.preventDefault()
+
+                    const codigo = document.querySelector('#codigo').value
+                    const mesExpiracao = document.querySelector('#mes').value
+                    const anoExpiracao = document.querySelector('#ano').value
+                    const cartaoNumero = document.querySelector('#cartao-numero').value
+                
+                    PagSeguroDirectPayment.createCardToken({
+                    cardNumber: cartaoNumero,
+                    brand: window.bandeira,
+                    cvv: codigo,
+                    expirationMonth: mesExpiracao,
+                    expirationYear: anoExpiracao,
+                    success: function(result){
+                        console.log(result.card.token)
+                    },
+                    error: function(result){
+                        alert("Cartão Inválido")
+                    },
+                    complete: function(result){
+
+                    }
+                });
+            })
+
+
+            document.getElementById('cartao-numero').addEventListener('input', ($input) => {
+                if($input.target.value.length == 6){
+                    
+                    PagSeguroDirectPayment.getBrand({
+                        cardBin: $input.target.value,
+                        success: function(result){
+                            window.bandeira = result.brand.name
+
+                            PagSeguroDirectPayment.getInstallments({
+                            amount: <?php echo $_POST['total-a-pagar'];?>,
+                            maxInstallmentNoInterest: 10,
+                            brand: window.bandeira,
+                            success: function(result){
+
+                                const parcelasVisa = result.installments.visa
+                                const parcelasMastercard = result.installments.mastercard
+                                const parcelasElo = result.installments.elo
+
+                                let selectParcela = document.querySelector('#parcela')
+                                selectParcela.innerHTML = '<option value="0" selected disabled>Selecione as parcelas</option>'
+
+                                if(parcelasVisa){
+
+                                    parcelasVisa.forEach(($parcelas, $index) => {
+
+                                        let valorDaParcela = $parcelas.installmentAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+                                        let valorTotal = $parcelas.totalAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
+                                        
+                                        selectParcela += `<option value='${$index}'>${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}</option>`
+                                        
+                                    })
+
+                                    document.querySelector('#parcela').innerHTML = selectParcela
+
+                                }
+
+                                if(parcelasMastercard){
+
+                                    parcelasMastercard.forEach(($parcelas, $index) => {
+
+                                    let valorDaParcela = $parcelas.installmentAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+                                    let valorTotal = $parcelas.totalAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+                                    selectParcela += `<option value='${$index}'>${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}</option>`
+
+                                    })
+
+                                    document.querySelector('#parcela').innerHTML = selectParcela
+                                }
+
+                                if(parcelasElo){
+
+                                    parcelasElo.forEach(($parcelas, $index) => {
+
+                                    let valorDaParcela = $parcelas.installmentAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+                                    let valorTotal = $parcelas.totalAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+                                    selectParcela += `<option value='${$index}'>${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}</option>`
+
+                                    })
+
+                                    document.querySelector('#parcela').innerHTML = selectParcela
+                                }
+                                
+
+                            },
+                            error: function(result){
+                                console.log(result)
+                                
+                            },
+                            complete: function(result){
+                                
+                            }
+                            });
+
+                        },
+                        error: function(result) {
+                            console.log(result)
+                        },
+                        complete: function(result){
+                            
+                        }
+                    })
+
+                }
+
+            })
+        </script>
+        
+
+            <script>
+                document.getElementById('btn-cep').addEventListener('click', (e) => {
+                    e.preventDefault()
+                    const xmlUrlCep = new XMLHttpRequest;
+                    const cep = document.getElementById('cep').value
+
+                    xmlUrlCep.onreadystatechange = () => {
+
+                        if(xmlUrlCep.status == 200 && xmlUrlCep.readyState == 4){
+
+                            const objectUrlCep = JSON.parse(xmlUrlCep.response)
+
+                            document.getElementById('rua').value = objectUrlCep.address
+
+                            document.getElementById('bairro').value = objectUrlCep.district
+
+                            document.getElementById('cidade').value = objectUrlCep.city
+
+                            document.getElementById('estado').value = objectUrlCep.state
+
+                            console.log(objectUrlCep)
+
+                            if(objectUrlCep.address == undefined){
+
+                                document.getElementById('rua').value = 'Endereço não encontrado'
+
+                            }else if(objectUrlCep.district == undefined){
+
+                                document.getElementById('bairro').value = 'Bairro não encontrado'
+
+                            }else if(objectUrlCep.city == undefined){
+
+                                document.getElementById('cidade').value = ''
+
+                            }else if(objectUrlCep.state == undefined){
+
+                                document.getElementById('estado').value = ''
+                            }
+
+                        }
+                    }
+
+                    const url = `https://ws.apicep.com/cep/${cep}.json`
+                    xmlUrlCep.open("GET", url)
+                    xmlUrlCep.send()
+                })
+            </script>
             
             <script>
-                let option = "<option disabled selected>Selecione uma data</option>"
-                document.getElementById('validade').innerHTML = option 
+                let option = "<option disabled selected value='0'>Selecione o mês do cartão</option>"
+                for(let i = 1; i <= 12; i++){
+                    if(i < 10){
+                        option += `<option value='${i}'>0${i}</option>`
+                    }else{
+                        option += `<option value='${i}'>${i}</option>`
+                    }
+                    document.getElementById('mes').innerHTML = option 
+                }
+
+
+                const date = new Date;
+                let optionYear = "<option disabled selected value='0'>Selecione o ano do cartão</option>"
+                for(let i = date.getFullYear(); i <= date.getFullYear() + 20; i++){
+                    optionYear += `<option value='${i}'>${i}</option>`
+                    document.getElementById('ano').innerHTML = optionYear
+                }
             </script>
 
           
@@ -382,6 +587,21 @@ if(isset($_POST['pagamentos'])){
                         .replace(/(\d{2})(\d)/, '($1) $2')
                         .replace(/(\d{5})(\d)/, '$1-$2')
                         .replace(/-(\d{4})\d+?$/, '-$1')
+                    },
+                    cep(value){
+                        return value
+                        .replace(/\D/g, '')
+                        .replace(/(\d{5})(\d)/, '$1-$2')
+                        .replace(/(-\d{3})\d+?$/, '$1')
+                    },
+                    number(value){
+                        return value
+                        .replace(/\D/g, '')
+                    },
+                    cvv(value){
+                        return value
+                        .replace(/\D/g, '')
+                        .replace(/(\d{3})\d+?$/, '$1')
                     }
                 }
                 
@@ -475,6 +695,7 @@ if(isset($_POST['pagamentos'])){
                 </div>
             </footer>
 
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
@@ -485,15 +706,12 @@ if(isset($_POST['pagamentos'])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/fontawesome.min.js"></script>
 
 
-    <script src="js/jquery-3.1.1.min.js"></script>
+    <!-- <script src="js/jquery-3.1.1.min.js"></script> -->
     <script src="js/flickity.min.js"></script>
     <script src="js/parallax.js"></script>
     <script src="js/smooth-scroll.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
-    <script>
-        PagSeguroDirectPayment.setSessionId("<?php echo $dados['sessionCode']; ?>")
-    </script>
+    
 
 
 

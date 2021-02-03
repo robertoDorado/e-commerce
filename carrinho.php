@@ -392,6 +392,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                         <option value="0" disabled selected>Selecione uma forma de pagamento</option>
                                         <option value="checkout_transparente">PagSeguro Checkout Transparente</option>
                                     </select><br>
+                                    <input type="hidden" name="total-a-pagar" id="total-a-pagar">
                                     <button style="width:30%;border:none;margin-top:10px;" type="submit" class="btn btn-success">Comprar agora!</button>
                                 </form>
                             </div>
@@ -489,8 +490,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                     if(xmlCart.readyState == 4 && xmlCart.status == 200){
 
                         const objectCart = JSON.parse(xmlCart.response)
-
-                        console.log(objectCart)
                         
                         let subtotal = 0
 
@@ -527,6 +526,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                         const brlFormatTotalAPagar = totalAPagarPelaCompra.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
                         document.querySelector('.total').innerHTML = `Total: R$ ${brlFormatTotalAPagar}`
+
+                        document.querySelector('#total-a-pagar').value = totalAPagarPelaCompra
                     }
                 }
 
