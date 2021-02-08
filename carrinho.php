@@ -393,6 +393,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                         <option value="checkout_transparente">PagSeguro Checkout Transparente</option>
                                     </select><br>
                                     <input type="hidden" name="total-a-pagar" id="total-a-pagar">
+                                    <input type="hidden" name="id-do-produto" id="id-do-produto" value="<?php echo $cartItem['id'];?>">
                                     <button style="width:30%;border:none;margin-top:10px;" type="submit" class="btn btn-success">Comprar agora!</button>
                                 </form>
                             </div>

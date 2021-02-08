@@ -279,11 +279,11 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                 <div class="col-md-12 col-xs-12 col-lg-12">
                     <?php if(isset($_SESSION['user_client'])):?>
                         <?php foreach($data as $newData): ?>
-                    <form method="POST" style="margin-top:150px;">
+                    <form class="select-form" action="finalizar-pagamento" method="POST" style="margin-top:150px;">
                         <h3>Preencha os dados de Pagamento</h3>
                         <div class="form-group">
                             <label for="nome">Nome Completo:</label><br>
-                            <input value="Roberto Felipe Dorado Pena" style="width:300px;" class="form-control" type="text" name="nome" id="nome">
+                            <input style="width:300px;" class="form-control" type="text" name="nome" id="nome">
                         </div>
 
                         <div class="form-group">
@@ -293,12 +293,17 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                         <div class="form-group">
                             <label for="Cpf">CPF:</label><br>
-                            <input style="width:300px;" type="text" name="cpf" id="cpf" value="44257318830">
+                            <input style="width:300px;" type="text" name="cpf" id="cpf" data-js="cpf">
                         </div>
 
                         <div class="form-group">
                             <label for="password">Senha:</label><br>
-                            <input style="width:300px;" type="password" name="password" id="password" value="<?php echo $newData['senha']; ?>">
+                            <input style="width:300px;" type="password" name="password" id="password" value="<?php echo $newData['senha'];?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="celular">Celular:</label><br>
+                            <input data-js="celular" style="width:300px;" type="text" name="celular" id="celular">
                         </div>
 
                         <br>
@@ -350,7 +355,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                         <div class="form-group">
                             <label for="cartao-numero">Número do Cartão:</label><br>
-                            <input style="width:300px;" type="text" name="cartao-numero" id="cartao-numero">
+                            <input style="width:300px;" type="text" name="cartao-numero" id="cartao-numero" value="4111111111111111">
                         </div>
 
                         <div class="form-group">
@@ -373,43 +378,41 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                             <select style="width:300px" name="parcela" id="parcela"></select>
                         </div>
 
-                        <button style="150px;border:none;padding-left:20px;padding-right:20px;" id="get-btn-submit" class="btn btn-success">Efetuar Compra</button>
-                    </form>
+                        <button style="150px;border:none;padding-left:20px;padding-right:20px;" id="get-btn-submit" class="btn btn-success">Efetuar Compra</button><br><br>
+                        <div style="display:none;width:300px" class="select-error-message error-message"><p class="lead text-center select-message-error">Cartão Inválido</p></div>
+                    </form><br>
                     <?php endforeach; ?>
                     <?php endif;?>
                 </div>
             </div>
         </div>
-        
+
+        <style>
+        .error-message{
+            background-color:rgb(218, 44, 56);
+        }
+        .error-message p{
+            color:#fff;
+        }
+        </style>
+
         <script>
-            PagSeguroDirectPayment.setSessionId("<?php echo $dados['sessionCode']; ?>")
-            document.getElementById('get-btn-submit').addEventListener('click', (btn) => {
-                btn.preventDefault()
-
-                    const codigo = document.querySelector('#codigo').value
-                    const mesExpiracao = document.querySelector('#mes').value
-                    const anoExpiracao = document.querySelector('#ano').value
-                    const cartaoNumero = document.querySelector('#cartao-numero').value
-                
-                    PagSeguroDirectPayment.createCardToken({
-                    cardNumber: cartaoNumero,
-                    brand: window.bandeira,
-                    cvv: codigo,
-                    expirationMonth: mesExpiracao,
-                    expirationYear: anoExpiracao,
-                    success: function(result){
-                        console.log(result.card.token)
-                    },
-                    error: function(result){
-                        alert("Cartão Inválido")
-                    },
-                    complete: function(result){
-
-                    }
-                });
+            document.getElementById('mes').addEventListener('change', (e) => {
+                window.mesCartao = e.target.children[e.target.selectedIndex]
+                return window.mesCartao.value
             })
 
+            document.getElementById('ano').addEventListener('change', (e) => {
+                window.anoCartao = e.target.children[e.target.selectedIndex]
+                return window.anoCartao.value
+            })
+        </script>
+        
+        <script>
+        
 
+            let selectParcela = document.querySelector('#parcela')
+            selectParcela.innerHTML = '<option value="0" selected disabled>Selecione as parcelas</option>'
             document.getElementById('cartao-numero').addEventListener('input', ($input) => {
                 if($input.target.value.length == 6){
                     
@@ -424,12 +427,10 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                             brand: window.bandeira,
                             success: function(result){
 
+
                                 const parcelasVisa = result.installments.visa
                                 const parcelasMastercard = result.installments.mastercard
                                 const parcelasElo = result.installments.elo
-
-                                let selectParcela = document.querySelector('#parcela')
-                                selectParcela.innerHTML = '<option value="0" selected disabled>Selecione as parcelas</option>'
 
                                 if(parcelasVisa){
 
@@ -438,12 +439,13 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                                         let valorDaParcela = $parcelas.installmentAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
                                         let valorTotal = $parcelas.totalAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
-                                        
-                                        selectParcela += `<option value='${$index}'>${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}</option>`
+
+                                        const option = document.createElement('option')
+                                        option.setAttribute('value', $index)
+                                        option.innerHTML = `${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}`
+                                        selectParcela.append(option)
                                         
                                     })
-
-                                    document.querySelector('#parcela').innerHTML = selectParcela
 
                                 }
 
@@ -455,11 +457,13 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                                     let valorTotal = $parcelas.totalAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
-                                    selectParcela += `<option value='${$index}'>${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}</option>`
+                                    const option = document.createElement('option')
+                                    option.setAttribute('value', $index)
+                                    option.innerHTML = `${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}`
+                                    selectParcela.append(option)
 
                                     })
 
-                                    document.querySelector('#parcela').innerHTML = selectParcela
                                 }
 
                                 if(parcelasElo){
@@ -470,11 +474,13 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                                     let valorTotal = $parcelas.totalAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
-                                    selectParcela += `<option value='${$index}'>${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}</option>`
+                                    const option = document.createElement('option')
+                                    option.setAttribute('value', $index)
+                                    option.innerHTML = `${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}`
+                                    selectParcela.append(option)
 
                                     })
 
-                                    document.querySelector('#parcela').innerHTML = selectParcela
                                 }
                                 
 
@@ -495,11 +501,96 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         complete: function(result){
                             
                         }
+
                     })
 
                 }
 
             })
+
+        const nomeCliente = document.getElementById('nome')
+        const emailCliente = document.getElementById('email')
+        const senhaCliente = document.getElementById('password')
+        const cpfCliente = document.getElementById('cpf')
+        const celularCliente = document.getElementById('celular')
+
+        // Informações do endereço
+
+        const cepCliente = document.getElementById('cep')
+        const ruaCliente = document.getElementById('rua')
+        const bairroCliente = document.getElementById('bairro')
+        const numeroCliente = document.getElementById('numero')
+        const complementoCliente = document.getElementById('complemento')
+        const cidadeCliente = document.getElementById('cidade')
+        const estadoCliente = document.getElementById('estado')
+
+        // Informações do Cartão
+        const cartaoNome = document.getElementById('cartao-nome')
+        const codigoCartao = document.getElementById('codigo')
+        const cartaoNumero = document.getElementById('cartao-numero').value
+
+            PagSeguroDirectPayment.setSessionId("<?php echo $dados['sessionCode']; ?>")
+            document.querySelector('.select-form').addEventListener('submit', (e) => {
+                e.preventDefault()
+
+                    PagSeguroDirectPayment.createCardToken({
+                    cardNumber: cartaoNumero,
+                    brand: window.bandeira,
+                    cvv: codigoCartao.value,
+                    expirationMonth: window.mesCartao.value,
+                    expirationYear: window.anoCartao.value,
+                    success: function(result){
+                        const formData = new FormData;
+                        const xmlToken = new XMLHttpRequest;
+                        const idPagSeguro = PagSeguroDirectPayment.getSenderHash()
+                        const selectParcelaCartao = document.querySelector('#parcela').value
+
+                        let idUser = Math.random() * 100 * parseInt(cartaoNumero)
+                        idUser = idUser.toString()
+
+                        formData.append("id_user", idUser)
+                        formData.append("id_produto", <?php echo $_POST['id-do-produto']?>)
+                        formData.append("nome_cliente", nomeCliente.value)
+                        formData.append("email_cliente", emailCliente.value)
+                        formData.append("senha_cliente", senhaCliente.value)
+                        formData.append("cpf_cliente", cpfCliente.value)
+                        formData.append("celular_cliente", celularCliente.value)
+                        formData.append("cep_cliente", cepCliente.value)
+                        formData.append("rua_cliente", ruaCliente.value)
+                        formData.append("bairro_cliente", bairroCliente.value)
+                        formData.append("numero_endereco", numeroCliente.value)
+                        formData.append("complemento_cliente", complementoCliente.value)
+                        formData.append("cidade_cliente", cidadeCliente.value)
+                        formData.append("estado_cliente", estadoCliente.value)
+                        formData.append("nome_cartao", cartaoNome.value)
+                        formData.append("numero_cartao", cartaoNumero)
+                        formData.append("codigo_cartao", codigoCartao.value)
+                        formData.append("mes_expiracao",  window.mesCartao.value)
+                        formData.append("ano_expiracao", window.anoCartao.value)
+                        formData.append("parcela_cartao", selectParcelaCartao)
+                        formData.append("id_pag_seguro", idPagSeguro)
+                        formData.append("token_card", result.card.token)
+                        
+                        xmlToken.onreadystatechange = () =>{
+                            
+                            if(xmlToken.readyState == 4 && xmlToken.status == 200){
+                                
+                                window.location.href = "http://localhost/projetos/e-commerce/finalizar-pagamento.php"
+                            }
+                        }
+
+                        xmlToken.open("POST", "finalizar-pagamento.php", true)
+                        xmlToken.send(formData)
+    
+                    },
+                    error: function(result){
+                        document.querySelector('.select-error-message').style.display = 'block'
+                    },
+                    complete: function(result){
+    
+                    }
+                })
+            });
         </script>
         
 
@@ -523,8 +614,6 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                             document.getElementById('estado').value = objectUrlCep.state
 
-                            console.log(objectUrlCep)
-
                             if(objectUrlCep.address == undefined){
 
                                 document.getElementById('rua').value = 'Endereço não encontrado'
@@ -545,8 +634,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         }
                     }
 
-                    const url = `https://ws.apicep.com/cep/${cep}.json`
-                    xmlUrlCep.open("GET", url)
+                    xmlUrlCep.open("GET", `https://ws.apicep.com/cep/${cep}.json`)
                     xmlUrlCep.send()
                 })
             </script>
@@ -555,9 +643,9 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                 let option = "<option disabled selected value='0'>Selecione o mês do cartão</option>"
                 for(let i = 1; i <= 12; i++){
                     if(i < 10){
-                        option += `<option value='${i}'>0${i}</option>`
+                        option += `<option value='${i}' id='${i}'>0${i}</option>`
                     }else{
-                        option += `<option value='${i}'>${i}</option>`
+                        option += `<option value='${i}' id='${i}'>${i}</option>`
                     }
                     document.getElementById('mes').innerHTML = option 
                 }
@@ -566,7 +654,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                 const date = new Date;
                 let optionYear = "<option disabled selected value='0'>Selecione o ano do cartão</option>"
                 for(let i = date.getFullYear(); i <= date.getFullYear() + 20; i++){
-                    optionYear += `<option value='${i}'>${i}</option>`
+                    optionYear += `<option value='${i}' id='${i}'>${i}</option>`
                     document.getElementById('ano').innerHTML = optionYear
                 }
             </script>
@@ -602,6 +690,14 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         return value
                         .replace(/\D/g, '')
                         .replace(/(\d{3})\d+?$/, '$1')
+                    },
+                    cpf(value){
+                        return value
+                        .replace(/\D/g, '')
+                        .replace(/(\d{3})(\d)/, '$1.$2')
+                        .replace(/(\d{3})(\d)/, '$1.$2')
+                        .replace(/(\d{3})(\d)/, '$1-$2')
+                        .replace(/(-\d{2})\d+?$/, '$1')
                     }
                 }
                 

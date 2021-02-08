@@ -89,7 +89,7 @@ $creditCard->setInstallment()->withParameters(1, '30.00');
 
 // Set the credit card holder information
 $creditCard->setHolder()->setBirthdate('01/10/1979');
-$creditCard->setHolder()->setName('João Comprador'); // Equals in Credit Card
+$creditCard->setHolder()->setName('João da Silva'); // Equals in Credit Card
 
 $creditCard->setHolder()->setPhone()->withParameters(
     11,
