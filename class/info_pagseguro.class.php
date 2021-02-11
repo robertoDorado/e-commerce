@@ -5,10 +5,9 @@ class Pagamentos {
 
     use Conection;
 
-    public function checkoutCreditCard($idUser, $idProduto, $nomeCliente, $emailCliente, $cpfCliente, $senhaCliente, $telefoneCliente, $cepCliente, $ruaCliente, $bairroCliente, $numeroEndereco, $complementoEndereco, $cidadeCliente, $estadoCliente, $nomeCartao, $numeroCartao, $mesExpiracao, $anoExpiracao, $codigoCartao, $parcelaCartao, $idPagSeguro, $tokenCard){
+    public function checkoutCreditCard($idUser, $nomeCliente, $emailCliente, $cpfCliente, $senhaCliente, $telefoneCliente, $cepCliente, $ruaCliente, $bairroCliente, $numeroEndereco, $complementoEndereco, $cidadeCliente, $estadoCliente, $nomeCartao, $numeroCartao, $mesExpiracao, $anoExpiracao, $codigoCartao, $parcelaCartao, $valorFrete, $idPagSeguro, $tokenCard){
         $sql = "INSERT INTO purchase SET
         id_user = :id_user, 
-        id_produto = :id_produto, 
         nome_completo = :nome_completo,
         cpf_cliente = :cpf_cliente,
         senha_cliente = :senha_cliente,
@@ -27,11 +26,11 @@ class Pagamentos {
         ano_expiracao = :ano_expiracao,
         codigo_cartao = :codigo_cartao,
         parcela_cartao = :parcela_cartao,
+        valor_frete = :valor_frete,
         id_pag_seguro = :id_pag_seguro,
-        token_card = :token_card";
+        token_card = :token_card,";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":id_user", $idUser);
-        $sql->bindValue(":id_produto", $idProduto);
         $sql->bindValue(":nome_completo", $nomeCliente);
         $sql->bindValue(":cpf_cliente", $cpfCliente);
         $sql->bindValue(":senha_cliente", $senhaCliente);
@@ -50,6 +49,7 @@ class Pagamentos {
         $sql->bindValue(":ano_expiracao", $anoExpiracao);
         $sql->bindValue(":codigo_cartao", $codigoCartao);
         $sql->bindValue(":parcela_cartao", $parcelaCartao);
+        $sql->bindValue(":valor_frete", $valorFrete);
         $sql->bindValue(":id_pag_seguro", $idPagSeguro);
         $sql->bindValue(":token_card", $tokenCard);
         $sql->execute();
@@ -60,7 +60,7 @@ class Pagamentos {
 
     public function selectInfoCostumer(){
         $data = array();
-        $sql = "SELECT * FROM purchase ORDER BY id_user DESC";
+        $sql = "SELECT * FROM purchase";
         $sql = $this->pdo->query($sql);
         
         if($sql->rowCount() > 0){

@@ -10,6 +10,7 @@ trait Conection {
     function __construct(){
         try{
             $this->pdo = new PDO("mysql:dbname={$this->dbName};host={$this->host};", "{$this->dbUser}");
+            // echo "Conectado";
         }catch(PDOException $e){
             echo "Erro: ".$e->getMessage();
         }

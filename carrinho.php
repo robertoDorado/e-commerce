@@ -98,7 +98,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
     </head>
 
-    <nav id="menu1" class="bar menu-principal bar-1 hidden-xs">
+    <nav id="menu1" class="bar menu-principal bar-1 hidden-xs pos-fixed" >
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-1 col-md-2 hidden-xs">
@@ -279,22 +279,18 @@ if(isset($_POST['email']) && isset($_POST['password'])){
               margin-left:10px !important;
             }
             .menu-principal{
-                background:#f7f4f4;
+                background:#fff;
             }
             #menu1{
                 -webkit-box-shadow: 1px 8px 18px 0px rgba(0,0,0,0.29); 
                 box-shadow: 1px 8px 18px 0px rgba(0,0,0,0.29);
-                position:fixed;
-                z-index:2;
-                width:100%;
-                top:0;
             }
         </style>
 
 <body class="dropdowns--hover" data-smooth-scroll-offset="77">
             
 
-            <section class="space--xs imagebg select-imgbg" data-overlay="4">
+            <section class="space--xs imagebg select-imgbg bg--secondary" data-overlay="4">
                 <div class="background-image-holder bg-holder"> <img alt="background" src="img/recruitment-2.jpg"> </div>
                 <div class="container">
                     <div class="cta cta--horizontal text-center-xs row">
@@ -393,7 +389,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                         <option value="checkout_transparente">PagSeguro Checkout Transparente</option>
                                     </select><br>
                                     <input type="hidden" name="total-a-pagar" id="total-a-pagar">
-                                    <input type="hidden" name="id-do-produto" id="id-do-produto" value="<?php echo $cartItem['id'];?>">
+                                    <input type="hidden" name="valor_frete" value="<?php echo $frete->Valor; ?>">
                                     <button style="width:30%;border:none;margin-top:10px;" type="submit" class="btn btn-success">Comprar agora!</button>
                                 </form>
                             </div>

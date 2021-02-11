@@ -55,7 +55,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
     </head>
 
-    <nav id="menu1" class="bar menu-principal bar-1 hidden-xs">
+    <nav id="menu1" class="bar menu-principal bar-1 hidden-xs pos-fixed">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-1 col-md-2 hidden-xs">
@@ -238,15 +238,11 @@ if(isset($_POST['email']) && isset($_POST['password'])){
               margin-left:10px !important;
             }
             .menu-principal{
-                background:#f7f4f4;
+                background:#fff;
             }
             #menu1{
                 -webkit-box-shadow: 1px 8px 18px 0px rgba(0,0,0,0.29); 
                 box-shadow: 1px 8px 18px 0px rgba(0,0,0,0.29);
-                position:fixed;
-                z-index:2;
-                width:100%;
-                top:0;
             }
         </style>
 

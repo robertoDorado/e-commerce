@@ -32,7 +32,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="js_active  vc_desktop  vc_transform  vc_transform">
     <head>
         <meta charset="utf-8">
         <title>Meraki</title>
@@ -55,7 +55,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 
     </head>
 
-    <nav id="menu1" class="bar menu-principal bar-1 hidden-xs">
+    <nav id="menu1" class="bar menu-principal bar-1 hidden-xs pos-fixed">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-1 col-md-2 hidden-xs">
@@ -244,10 +244,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             #menu1{
                 -webkit-box-shadow: 1px 8px 18px 0px rgba(0,0,0,0.29); 
                 box-shadow: 1px 8px 18px 0px rgba(0,0,0,0.29);
-                position:fixed;
-                z-index:2;
-                width:100%;
-                top:0;
             }
         </style>
 
@@ -255,7 +251,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 
         
 
-          <section style="padding-bottom:0;" class="slider">
+          <section class="bg--secondary">
                 <div class="container-fluid reset-padding-margin">
                     <div class="row">
                         <div class="col reset-padding">
@@ -280,13 +276,13 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 color:gray;
               }
               .slides img{
-                height:400px;
+                height:500px;
               }
               .reset-padding{
                 padding:0;
               }
-              .slider{
-                  margin-top:53px;
+              .bg--secondary{
+                  background:#fff;
               }
           </style>
 
@@ -512,7 +508,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 }
             }
             
-            xhttp.open("GET", `http://localhost/projetos/e-commerce/class/json_new_product.class.php`)
+            xhttp.open("GET", "http://localhost/projetos/e-commerce/class/json_new_product.class.php")
             xhttp.send()
             </script>
 

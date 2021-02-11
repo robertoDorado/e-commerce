@@ -10,7 +10,6 @@ $carrinho = new Cart;
 if(isset($_POST['token_card'])){
 
     $idUser = addslashes($_POST['id_user']);
-    $idProduto = addslashes($_POST['id_produto']);
     $nomeCliente = utf8_decode(addslashes($_POST['nome_cliente']));
     $emailCliente = addslashes($_POST['email_cliente']);
     $cpfCliente = addslashes($_POST['cpf_cliente']);
@@ -29,22 +28,34 @@ if(isset($_POST['token_card'])){
     $anoExpiracao = addslashes($_POST['ano_expiracao']);
     $codigoCartao = addslashes($_POST['codigo_cartao']);
     $parcelaCartao = addslashes($_POST['parcela_cartao']);
+    $valorFrete = addslashes($_POST['valor_frete']);
     $idPagSeguro = addslashes($_POST['id_pag_seguro']);
     $tokenCard = addslashes($_POST['token_card']);
-
-    $pagamentos->checkoutCreditCard($idUser, $idProduto, $nomeCliente, $emailCliente, $cpfCliente, $senhaCliente, $telefoneCliente, $cepCliente, $ruaCliente, $bairroCliente, $numeroEndereco, $complementoEndereco, $cidadeCliente, $estadoCliente, $nomeCartao, $numeroCartao, $mesExpiracao, $anoExpiracao, $codigoCartao, $parcelaCartao, $idPagSeguro, $tokenCard);
     
-}
-$data = $pagamentos->selectInfoCostumer();
-if(isset($data)){
-    
-    foreach($data as $newData)
-    $currentUser = $pagamentos->selectAsIdUserCostumer($newData['id_user']);
     $items = $carrinho->getList();
-    print_r($items);
-    print_r($currentUser);
-}
-exit;
+
+    $formatCpfCliente1 =  str_replace(".", "", $cpfCliente);
+    $formatCpfCliente2 =  str_replace("-", "", $formatCpfCliente1);
+
+    $formatTelefoneCliente1 = str_replace("-", "", $telefoneCliente);
+    $formatTelefoneCliente2 = str_replace(")", "", $formatTelefoneCliente1);
+    $formatTelefoneCliente3 = str_replace("(", "", $formatTelefoneCliente2);
+    $arrayTelefone = explode(" ", $formatTelefoneCliente3);
+
+    $formatCepCliente = str_replace("-", "", $cepCliente);
+
+    $formatParcela1 = str_replace("R$", "", $parcelaCartao);
+    $formatParcela2 = str_replace("x", "", $formatParcela1);
+    $formatParcela3 = str_replace(".", "", $formatParcela2);
+    $formatParcela4 = str_replace(",", ".", $formatParcela3);
+    $arrayParcela = explode(" ", $formatParcela4);
+
+    $valorFreteFormat = str_replace(",", ".", $valorFrete);
+
+    $price = 0;
+    $frete =  floatval($valorFreteFormat) / count($items);
+    $qtdParcelas = intval($arrayParcela[0]);
+    $dddTelefone = intval($arrayTelefone[0]);
 
 
 //Instantiate a new direct payment request, using Credit Card
@@ -57,40 +68,43 @@ $creditCard->setReceiverEmail('robertodorado7@gmail.com');
 
 // Set a reference code for this payment request. It is useful to identify this payment
 // in future notifications.
-$creditCard->setReference($currentUser['id_user']);
+$creditCard->setReference($idUser);
 
 // Set the currency
 $creditCard->setCurrency("BRL");
 
 // Add an item for this payment request
-$creditCard->addItems()->withParameters(
-    '0001',
-    'Notebook prata',
-    2,
-    10.00
-);
+foreach($items as $itemsCart){
 
-// Add an item for this payment request
-// $creditCard->addItems()->withParameters(
-//     '0002',
-//     'Notebook preto',
-//     2,
-//     5.00
-// );
+    $totalItems = $itemsCart['qtd'];
+    $formatPriceProduct1 = str_replace("R$", "", $itemsCart['price']);
+    $formatPriceProduct2 = str_replace(".", "", $formatPriceProduct1);
+    $formatPriceProduct3 = str_replace(",", ".", $formatPriceProduct2);
+    $formatPriceProduct4 = $formatPriceProduct3;
+    $price += ($totalItems * $formatPriceProduct4) + $frete;
+}
+$idCompra = md5($itemsCart['id']);
+
+$creditCard->addItems()->withParameters(
+    $idCompra,
+    $itemsCart['title'],
+    1,
+    $price
+);
 
 // Set your customer information.
 // If you using SANDBOX you must use an email @sandbox.pagseguro.com.br
-$creditCard->setSender()->setName('João da Silva');
-$creditCard->setSender()->setEmail('c34149393016125191405@sandbox.pagseguro.com.br');
+$creditCard->setSender()->setName($nomeCliente);
+$creditCard->setSender()->setEmail($emailCliente);
 
 $creditCard->setSender()->setPhone()->withParameters(
-    11,
-    '955555555'
+    $dddTelefone,
+    $arrayTelefone[1]
 );
 
 $creditCard->setSender()->setDocument()->withParameters(
     'CPF',
-    44257318830
+    $formatCpfCliente2
 );
 
 
@@ -100,26 +114,26 @@ $creditCard->setSender()->setIp('127.0.0.1');
 
 // Set shipping information for this payment request
 $creditCard->setShipping()->setAddress()->withParameters(
-    'Av. Brig. Faria Lima',
-    '1384',
-    'Jardim Paulistano',
-    '01452002',
-    'São Paulo',
-    'SP',
+    $ruaCliente,
+    $numeroEndereco,
+    $bairroCliente,
+    $formatCepCliente,
+    $cidadeCliente,
+    $estadoCliente,
     'BRA',
-    'apto. 114'
+    $complementoEndereco
 );
 
 //Set billing information for credit card
 $creditCard->setBilling()->setAddress()->withParameters(
-    'Av. Brig. Faria Lima',
-    '1384',
-    'Jardim Paulistano',
-    '01452002',
-    'São Paulo',
-    'SP',
+    $ruaCliente,
+    $numeroEndereco,
+    $bairroCliente,
+    $formatCepCliente,
+    $cidadeCliente,
+    $estadoCliente,
     'BRA',
-    'apto. 114'
+    $complementoEndereco
 );
 
 // Set credit card token
@@ -127,20 +141,23 @@ $creditCard->setToken($tokenCard);
 
 // Set the installment quantity and value (could be obtained using the Installments
 // service, that have an example here in \public\getInstallments.php)
-$creditCard->setInstallment()->withParameters(1, '20.00');
+$creditCard->setInstallment()->withParameters(
+    $qtdParcelas, 
+    $arrayParcela[2]
+);
 
 // Set the credit card holder information
 $creditCard->setHolder()->setBirthdate('01/10/1979');
-$creditCard->setHolder()->setName('João da Silva'); // Equals in Credit Card
+$creditCard->setHolder()->setName(utf8_encode($nomeCartao)); // Equals in Credit Card
 
 $creditCard->setHolder()->setPhone()->withParameters(
-    11,
-    '977777777'
+    $dddTelefone,
+    $arrayTelefone[1]
 );
 
 $creditCard->setHolder()->setDocument()->withParameters(
     'CPF',
-    '44257318830'
+    $formatCpfCliente2
 );
 
 // Set the Payment Mode for this payment request
@@ -155,8 +172,9 @@ try {
         \PagSeguro\Configuration\Configure::getAccountCredentials()
     );
     // echo "<pre>";
-    print_r($result);
 } catch (Exception $e) {
     // echo "</br> <strong>";
-    echo 'Erro: ' . $e->getMessage();
+    echo "Erro no pagamento";
+}
+
 }

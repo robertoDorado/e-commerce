@@ -73,10 +73,11 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
         <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
         <script src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
+        <script>PagSeguroDirectPayment.setSessionId("<?php echo $dados['sessionCode']; ?>")</script>
 
     </head>
 
-    <nav id="menu1" class="bar menu-principal bar-1 hidden-xs">
+    <nav id="menu1" class="bar menu-principal bar-1 hidden-xs pos-fixed">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-1 col-md-2 hidden-xs">
@@ -260,26 +261,21 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
               margin-left:10px !important;
             }
             .menu-principal{
-                background:#f7f4f4;
+                background:#fff;
             }
             #menu1{
                 -webkit-box-shadow: 1px 8px 18px 0px rgba(0,0,0,0.29); 
                 box-shadow: 1px 8px 18px 0px rgba(0,0,0,0.29);
-                position:fixed;
-                z-index:2;
-                width:100%;
-                top:0;
             }
         </style>
 
 <body class="dropdowns--hover" data-smooth-scroll-offset="77">
 
-        <div class="container">
+        <div class="container" style="margin-top:150px;">
             <div class="row">
                 <div class="col-md-12 col-xs-12 col-lg-12">
                     <?php if(isset($_SESSION['user_client'])):?>
                         <?php foreach($data as $newData): ?>
-                    <form class="select-form" action="finalizar-pagamento" method="POST" style="margin-top:150px;">
                         <h3>Preencha os dados de Pagamento</h3>
                         <div class="form-group">
                             <label for="nome">Nome Completo:</label><br>
@@ -376,16 +372,29 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         <div class="form-group">
                             <label for="parcela">Selecione uma Parcela:</label><br>
                             <select style="width:300px" name="parcela" id="parcela"></select>
+                            <input type="hidden" id="valor_frete" name="valor_frete" value="<?php echo (isset($_POST['valor_frete'])) ? $_POST['valor_frete'] : ''; ?>">
                         </div>
 
                         <button style="150px;border:none;padding-left:20px;padding-right:20px;" id="get-btn-submit" class="btn btn-success">Efetuar Compra</button><br><br>
                         <div style="display:none;width:300px" class="select-error-message error-message"><p class="lead text-center select-message-error">Cartão Inválido</p></div>
-                    </form><br>
+                        <div style="display:none;width:300px" class="select-wait-message wait-message"><p class="lead text-center select-message-error">Aguarde um Instante</p></div>
+                        <div style="display:none;width:300px" class="select-field-message field-message"><p class="lead text-center select-message-error">Preencha todos os campos</p></div>
+                        <br>
                     <?php endforeach; ?>
                     <?php endif;?>
                 </div>
             </div>
         </div>
+
+    <script>
+        document.querySelector('#estado').addEventListener('input', (e) => {
+
+            if(!isNaN(e.target.value)){
+                document.querySelector("#estado").value = ''
+            }
+        })
+    </script>
+
 
         <style>
         .error-message{
@@ -393,6 +402,18 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
         }
         .error-message p{
             color:#fff;
+        }
+        .wait-message{
+            background:#4a90e2;
+        }
+        .wait-message p{
+            color:#fff;
+        }
+        .field-message{
+            background:#fff3cd;
+        }
+        .field-message p{
+            color:#a18533;
         }
         </style>
 
@@ -409,8 +430,6 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
         </script>
         
         <script>
-        
-
             let selectParcela = document.querySelector('#parcela')
             selectParcela.innerHTML = '<option value="0" selected disabled>Selecione as parcelas</option>'
             document.getElementById('cartao-numero').addEventListener('input', ($input) => {
@@ -423,9 +442,10 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                             PagSeguroDirectPayment.getInstallments({
                             amount: <?php echo $_POST['total-a-pagar'];?>,
-                            maxInstallmentNoInterest: 10,
                             brand: window.bandeira,
                             success: function(result){
+
+                                document.querySelector('.select-error-message').style.display = 'none'
 
 
                                 const parcelasVisa = result.installments.visa
@@ -441,7 +461,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                                         let valorTotal = $parcelas.totalAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
                                         const option = document.createElement('option')
-                                        option.setAttribute('value', $index)
+                                        option.setAttribute('value', `${$parcelas.quantity} x R$${valorDaParcela}`)
                                         option.innerHTML = `${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}`
                                         selectParcela.append(option)
                                         
@@ -458,7 +478,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                                     let valorTotal = $parcelas.totalAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
                                     const option = document.createElement('option')
-                                    option.setAttribute('value', $index)
+                                    option.setAttribute('value', `${$parcelas.quantity} x R$${valorDaParcela}`)
                                     option.innerHTML = `${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}`
                                     selectParcela.append(option)
 
@@ -475,7 +495,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                                     let valorTotal = $parcelas.totalAmount.toLocaleString('pt-br', {minimumFractionDigits: 2});
 
                                     const option = document.createElement('option')
-                                    option.setAttribute('value', $index)
+                                    option.setAttribute('value', `${$parcelas.quantity} x R$${valorDaParcela}`)
                                     option.innerHTML = `${$parcelas.quantity} x R$${valorDaParcela} total R$${valorTotal}`
                                     selectParcela.append(option)
 
@@ -496,7 +516,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                         },
                         error: function(result) {
-                            console.log(result)
+                            document.querySelector('.select-error-message').style.display = 'block'
                         },
                         complete: function(result){
                             
@@ -528,10 +548,12 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
         const cartaoNome = document.getElementById('cartao-nome')
         const codigoCartao = document.getElementById('codigo')
         const cartaoNumero = document.getElementById('cartao-numero').value
+        const frete = document.querySelector('#valor_frete').value
 
-            PagSeguroDirectPayment.setSessionId("<?php echo $dados['sessionCode']; ?>")
-            document.querySelector('.select-form').addEventListener('submit', (e) => {
-                e.preventDefault()
+        
+        document.querySelector('#get-btn-submit').addEventListener('click', (e) => {
+
+            if(nomeCliente.value != '' && emailCliente.value != '' && senhaCliente.value != '' && cpfCliente.value != '' && celularCliente.value != '' && cepCliente.value != '' && ruaCliente.value != '' && cidadeCliente != '' && estadoCliente != '' && cartaoNome != '' && codigoCartao != '' && cartaoNumero != '' && frete != ''){
 
                     PagSeguroDirectPayment.createCardToken({
                     cardNumber: cartaoNumero,
@@ -540,6 +562,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                     expirationMonth: window.mesCartao.value,
                     expirationYear: window.anoCartao.value,
                     success: function(result){
+
                         const formData = new FormData;
                         const xmlToken = new XMLHttpRequest;
                         const idPagSeguro = PagSeguroDirectPayment.getSenderHash()
@@ -548,8 +571,9 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         let idUser = Math.random() * 100 * parseInt(cartaoNumero)
                         idUser = idUser.toString()
 
+                        document.querySelector('.select-wait-message').style.display = 'block'
+
                         formData.append("id_user", idUser)
-                        formData.append("id_produto", <?php echo $_POST['id-do-produto']?>)
                         formData.append("nome_cliente", nomeCliente.value)
                         formData.append("email_cliente", emailCliente.value)
                         formData.append("senha_cliente", senhaCliente.value)
@@ -568,20 +592,26 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         formData.append("mes_expiracao",  window.mesCartao.value)
                         formData.append("ano_expiracao", window.anoCartao.value)
                         formData.append("parcela_cartao", selectParcelaCartao)
+                        formData.append("valor_frete", frete)
                         formData.append("id_pag_seguro", idPagSeguro)
                         formData.append("token_card", result.card.token)
                         
                         xmlToken.onreadystatechange = () =>{
-                            
+
                             if(xmlToken.readyState == 4 && xmlToken.status == 200){
                                 
-                                window.location.href = "http://localhost/projetos/e-commerce/finalizar-pagamento.php"
+                                window.location.href = "compra-realizada-com-sucesso.php"
+
+                            }
+                            if(xmlToken.response == "Erro no pagamento"){
+
+                                window.location.href = "erro-no-pagamento.php"
                             }
                         }
 
                         xmlToken.open("POST", "finalizar-pagamento.php", true)
                         xmlToken.send(formData)
-    
+                                
                     },
                     error: function(result){
                         document.querySelector('.select-error-message').style.display = 'block'
@@ -589,8 +619,13 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                     complete: function(result){
     
                     }
-                })
-            });
+                });
+
+            }else{
+                document.querySelector('.select-field-message').style.display = 'block'
+            }
+
+        })
         </script>
         
 
@@ -698,7 +733,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         .replace(/(\d{3})(\d)/, '$1.$2')
                         .replace(/(\d{3})(\d)/, '$1-$2')
                         .replace(/(-\d{2})\d+?$/, '$1')
-                    }
+                    },
                 }
                 
                 document.querySelectorAll('input').forEach(($input) => {
