@@ -3804,3 +3804,27 @@
 11/02/2021 21:39:44 PagSeguro.Session[info]: Begin
 11/02/2021 21:39:44 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
 11/02/2021 21:39:50 PagSeguro.Session[info]: Session ID: ed5542b432eb4210a056a14bb973d77e
+11/02/2021 22:26:39 PagSeguro.Session[info]: Begin
+11/02/2021 22:26:39 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+11/02/2021 22:26:45 PagSeguro.Session[info]: Session ID: 06e7d1367e00450fb2dc197031f360fb
+11/02/2021 22:27:17 PagSeguro.Session[info]: Begin
+11/02/2021 22:27:17 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+11/02/2021 22:27:24 PagSeguro.Session[info]: Session ID: 7e831e21afb7423d8b2b14c604cdb294
+11/02/2021 22:29:35 PagSeguro.Session[info]: Begin
+11/02/2021 22:29:35 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+11/02/2021 22:29:41 PagSeguro.Session[info]: Session ID: f5f331e851e544b0b2043e8378e03097
+11/02/2021 22:30:10 PagSeguro.Session[info]: Begin
+11/02/2021 22:30:11 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+11/02/2021 22:30:16 PagSeguro.Session[info]: Session ID: 456dd60aba974fa2b2d2bf8eef6c7f03
+11/02/2021 22:30:47 PagSeguro.Session[info]: Begin
+11/02/2021 22:30:47 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+11/02/2021 22:30:53 PagSeguro.Session[info]: Session ID: 4cc72314a4bc4f46b3dfd79f11e85710
+11/02/2021 22:34:09 PagSeguro.Session[info]: Begin
+11/02/2021 22:34:09 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+11/02/2021 22:34:15 PagSeguro.Session[info]: Session ID: 88d70c4127e548719b3f98478a50e45d
+11/02/2021 22:34:44 PagSeguro.Session[info]: Begin
+11/02/2021 22:34:44 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+11/02/2021 22:34:50 PagSeguro.Session[info]: Session ID: b68969b0fd8b44a1b42ca8a88d834d5d
+11/02/2021 22:39:00 PagSeguro.Session[info]: Begin
+11/02/2021 22:39:00 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+11/02/2021 22:39:06 PagSeguro.Session[info]: Session ID: 74e35d9e4e4b4cce9f41bb279397576b

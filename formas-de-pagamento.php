@@ -338,7 +338,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                         <div class="form-group">
                             <label for="estado">Estado:</label><br>
-                            <input style="width:300px;" type="text" name="estado" id="estado">
+                            <input maxlength="2" style="width:300px; text-transform:uppercase" type="text" name="estado" id="estado">
                         </div>
 
                         <button id="btn-cep" style="150px;border:none;padding-left:20px;padding-right:20px;" class="btn btn-primary">Buscar Endereço</button><br><br>
@@ -388,7 +388,6 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
     <script>
         document.querySelector('#estado').addEventListener('input', (e) => {
-
             if(!isNaN(e.target.value)){
                 document.querySelector("#estado").value = ''
             }
