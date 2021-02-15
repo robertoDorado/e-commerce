@@ -11,6 +11,7 @@ if(isset($_POST['token_card'])){
 
     $idUser = addslashes($_POST['id_user']);
     $nomeCliente = utf8_decode(addslashes($_POST['nome_cliente']));
+    $nascimentoCliente = $_POST['nascimento_cliente'];
     $emailCliente = addslashes($_POST['email_cliente']);
     $cpfCliente = addslashes($_POST['cpf_cliente']);
     $senhaCliente = addslashes($_POST['senha_cliente']);
@@ -147,7 +148,7 @@ $creditCard->setInstallment()->withParameters(
 );
 
 // Set the credit card holder information
-$creditCard->setHolder()->setBirthdate('01/10/1979');
+$creditCard->setHolder()->setBirthdate($nascimentoCliente);
 $creditCard->setHolder()->setName(utf8_encode($nomeCartao)); // Equals in Credit Card
 
 $creditCard->setHolder()->setPhone()->withParameters(

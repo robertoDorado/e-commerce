@@ -3,8 +3,10 @@ require_once "class/carrinho.class.php";
 require_once "vendor/autoload.php";
 require_once "class/config_pag_seguro.php";
 require_once "class/user.class.php";
+require_once "class/info_pagseguro.class.php";
 $user = new User;
 $cart = new Cart;
+$pagamentos = new Pagamentos;
 
 if(isset($_SESSION['user_client'])){
 
@@ -279,7 +281,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         <h3>Preencha os dados de Pagamento</h3>
                         <div class="form-group">
                             <label for="nome">Nome Completo:</label><br>
-                            <input style="width:300px;" class="form-control" type="text" name="nome" id="nome">
+                            <input value="<?php echo $newData['nome']?>" style="width:300px;" class="form-control" type="text" name="nome" id="nome">
                         </div>
 
                         <div class="form-group">
@@ -338,7 +340,36 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                         <div class="form-group">
                             <label for="estado">Estado:</label><br>
-                            <input maxlength="2" style="width:300px; text-transform:uppercase" type="text" name="estado" id="estado">
+                            <select name="estado" id="estado" style="width:300px;">
+                                <option value="0" selected disabled>Selecione o Estado</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="AC">Acre</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="RR">Roraima</option>
+                                <option value="PA">Pará</option>
+                                <option value="AP">Amapá</option>
+                                <option value="TO">Tocantins</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="PI">Piauí</option>
+                                <option value="CE">Ceará</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="BA">Bahia</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="PR">Paraná</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="GO">Goias</option>
+                                <option value="DF">Distrito Federal</option>
+                            </select>
                         </div>
 
                         <button id="btn-cep" style="150px;border:none;padding-left:20px;padding-right:20px;" class="btn btn-primary">Buscar Endereço</button><br><br>
@@ -346,7 +377,12 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         <h3>Informações de Pagamento:</h3>
                         <div class="form-group">
                             <label for="cartao-nome">Nome do titular do Cartão:</label><br>
-                            <input value="João da Silva" style="width:300px;" type="text" name="cartao-nome" id="cartao-nome">
+                            <input style="width:300px;" type="text" name="cartao-nome" id="cartao-nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="card-birth">Nascimento do titular do Cartão:</label><br>
+                            <input data-js="nascimento" style="width:300px;" type="text" name="card-birth" id="card-birth">
                         </div>
 
                         <div class="form-group">
@@ -386,13 +422,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
             </div>
         </div>
 
-    <script>
-        document.querySelector('#estado').addEventListener('input', (e) => {
-            if(!isNaN(e.target.value)){
-                document.querySelector("#estado").value = ''
-            }
-        })
-    </script>
+    
 
 
         <style>
@@ -548,6 +578,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
         const codigoCartao = document.getElementById('codigo')
         const cartaoNumero = document.getElementById('cartao-numero').value
         const frete = document.querySelector('#valor_frete').value
+        const birthDate = document.getElementById('card-birth')
 
         
         document.querySelector('#get-btn-submit').addEventListener('click', (e) => {
@@ -574,6 +605,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                         formData.append("id_user", idUser)
                         formData.append("nome_cliente", nomeCliente.value)
+                        formData.append("nascimento_cliente", birthDate.value)
                         formData.append("email_cliente", emailCliente.value)
                         formData.append("senha_cliente", senhaCliente.value)
                         formData.append("cpf_cliente", cpfCliente.value)
@@ -733,6 +765,13 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                         .replace(/(\d{3})(\d)/, '$1-$2')
                         .replace(/(-\d{2})\d+?$/, '$1')
                     },
+                    nascimento(value){
+                        return value
+                        .replace(/\D/g, '')
+                        .replace(/(\d{2})(\d)/, '$1/$2')
+                        .replace(/(\d{2})(\d)/, '$1/$2')
+                        .replace(/(\d{4})\d+?$/, '$1')
+                    }
                 }
                 
                 document.querySelectorAll('input').forEach(($input) => {
@@ -760,11 +799,11 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
                 }
             </style>
 
-<!-- <script>
+<script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
     }
-</script> -->
+</script>
 
 </body>
 

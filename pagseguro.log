@@ -3828,3 +3828,366 @@
 11/02/2021 22:39:00 PagSeguro.Session[info]: Begin
 11/02/2021 22:39:00 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
 11/02/2021 22:39:06 PagSeguro.Session[info]: Session ID: 74e35d9e4e4b4cce9f41bb279397576b
+15/02/2021 01:56:15 PagSeguro.Session[info]: Begin
+15/02/2021 01:56:15 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 01:56:22 PagSeguro.Session[info]: Session ID: 98db015cdef449ccb17fd2b248c57b3a
+15/02/2021 02:04:55 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 02:04:55 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:04:55 PagSeguro.Checkout[info]: Params: 
+15/02/2021 02:05:04 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 486531EC-48C0-44AC-9E28-2284726036CC
+15/02/2021 02:07:06 PagSeguro.Session[info]: Begin
+15/02/2021 02:07:06 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:07:12 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 02:07:53 PagSeguro.Session[info]: Begin
+15/02/2021 02:07:53 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:07:59 PagSeguro.Session[info]: Session ID: d56bc1a94f3549e785fe437f0bde38b8
+15/02/2021 02:08:44 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 02:08:45 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:08:45 PagSeguro.Checkout[info]: Params: 
+15/02/2021 02:08:53 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 63547BFA-1FE4-46B2-A135-D6BB822F5F07
+15/02/2021 02:11:29 PagSeguro.Session[info]: Begin
+15/02/2021 02:11:29 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:11:35 PagSeguro.Session[info]: Session ID: e193036735814fea9b21c388cddeccc1
+15/02/2021 02:12:44 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 02:12:44 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:12:44 PagSeguro.Checkout[info]: Params: 
+15/02/2021 02:12:52 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 1B3487B9-9E3D-4E71-87AC-967AB797850B
+15/02/2021 02:18:45 PagSeguro.Session[info]: Begin
+15/02/2021 02:18:45 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:18:51 PagSeguro.Session[info]: Session ID: e267597b8e2f4a6bb45e832810b869e3
+15/02/2021 02:20:27 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 02:20:27 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:20:28 PagSeguro.Checkout[info]: Params: 
+15/02/2021 02:20:33 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 02:21:13 PagSeguro.Session[info]: Begin
+15/02/2021 02:21:13 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:21:19 PagSeguro.Session[info]: Session ID: 917d626183284d40af087b30b0b8fc46
+15/02/2021 02:22:46 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 02:22:46 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 02:22:47 PagSeguro.Checkout[info]: Params: 
+15/02/2021 02:22:53 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 15:32:26 PagSeguro.Session[info]: Begin
+15/02/2021 15:32:27 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 15:32:33 PagSeguro.Session[info]: Session ID: d2f9a97435634476895d9ea623634627
+15/02/2021 15:33:28 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 15:33:28 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 15:33:28 PagSeguro.Checkout[info]: Params: 
+15/02/2021 15:33:36 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 766C559B-2B5D-480A-9402-5053FBB34B80
+15/02/2021 15:41:39 PagSeguro.Session[info]: Begin
+15/02/2021 15:41:40 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 15:41:45 PagSeguro.Session[info]: Session ID: ca3f34d6c42b4eb8903e074e3904c8f7
+15/02/2021 15:42:42 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 15:42:42 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 15:42:42 PagSeguro.Checkout[info]: Params: 
+15/02/2021 15:42:48 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 16:01:31 PagSeguro.Session[info]: Begin
+15/02/2021 16:01:32 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:01:38 PagSeguro.Session[info]: Session ID: b7cba6859eeb46dcae665986c3c20c14
+15/02/2021 16:02:41 PagSeguro.Session[info]: Begin
+15/02/2021 16:02:41 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:02:47 PagSeguro.Session[info]: Session ID: 6a637ab1ddc7456f9cf2914e241d7438
+15/02/2021 16:04:07 PagSeguro.Session[info]: Begin
+15/02/2021 16:04:07 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:04:13 PagSeguro.Session[info]: Session ID: 97f3a25ac17e4d04b19f929305c75629
+15/02/2021 16:05:29 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 16:05:29 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:05:29 PagSeguro.Checkout[info]: Params: 
+15/02/2021 16:05:37 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 2C3C251D-7DEB-4C4B-BBDE-AFC681B3FF9A
+15/02/2021 16:11:10 PagSeguro.Session[info]: Begin
+15/02/2021 16:11:10 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:11:16 PagSeguro.Session[info]: Session ID: 46d94d43c154415993f80213c2c1f1aa
+15/02/2021 16:12:47 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 16:12:47 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:12:47 PagSeguro.Checkout[info]: Params: 
+15/02/2021 16:12:53 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 16:23:41 PagSeguro.Session[info]: Begin
+15/02/2021 16:23:42 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:23:48 PagSeguro.Session[info]: Session ID: f00d060cd0954f769a72324020bd2a7f
+15/02/2021 16:28:20 PagSeguro.Session[info]: Begin
+15/02/2021 16:28:21 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:28:26 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 16:28:29 PagSeguro.Session[info]: Begin
+15/02/2021 16:28:29 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:28:35 PagSeguro.Session[info]: Session ID: 813b3ccd6c4b45ca91859339c38d13d7
+15/02/2021 16:31:16 PagSeguro.Session[info]: Begin
+15/02/2021 16:31:16 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:31:22 PagSeguro.Session[info]: Session ID: 6d635f83ed9a407eb84d5657aa3cbf65
+15/02/2021 16:33:04 PagSeguro.Session[info]: Begin
+15/02/2021 16:33:05 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:33:11 PagSeguro.Session[info]: Session ID: 33fd482fa0234e4aaa354aa85f3d0cd4
+15/02/2021 16:34:04 PagSeguro.Session[info]: Begin
+15/02/2021 16:34:05 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:34:11 PagSeguro.Session[info]: Session ID: 1e41641d9a654c82bfe4444b4c49a0ec
+15/02/2021 16:34:48 PagSeguro.Session[info]: Begin
+15/02/2021 16:34:48 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:34:54 PagSeguro.Session[info]: Session ID: 23fd1691a3554055bc23d903b69c6506
+15/02/2021 16:35:26 PagSeguro.Session[info]: Begin
+15/02/2021 16:35:26 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:35:32 PagSeguro.Session[info]: Session ID: 0709084947e8457d9bb4798c03389a0b
+15/02/2021 16:36:01 PagSeguro.Session[info]: Begin
+15/02/2021 16:36:01 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:36:07 PagSeguro.Session[info]: Session ID: 7827b76e64374e2c823bdf55456b5c8a
+15/02/2021 16:42:29 PagSeguro.Session[info]: Begin
+15/02/2021 16:42:30 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:42:36 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 16:42:39 PagSeguro.Session[info]: Begin
+15/02/2021 16:42:39 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:42:45 PagSeguro.Session[info]: Session ID: 0d21a0d97e64430caa2dfb0a5e170c59
+15/02/2021 16:44:12 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 16:44:12 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:44:14 PagSeguro.Checkout[info]: Params: 
+15/02/2021 16:44:20 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 16:52:10 PagSeguro.Session[info]: Begin
+15/02/2021 16:52:10 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:52:16 PagSeguro.Session[info]: Session ID: 3adda8c5ec544b6c94c7e7d31dbfb921
+15/02/2021 16:53:24 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 16:53:24 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:53:24 PagSeguro.Checkout[info]: Params: 
+15/02/2021 16:53:30 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 16:56:42 PagSeguro.Session[info]: Begin
+15/02/2021 16:56:42 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 16:56:48 PagSeguro.Session[info]: Session ID: bd1d063b13944f549711fdca05f1c48f
+15/02/2021 18:03:04 PagSeguro.Session[info]: Begin
+15/02/2021 18:03:04 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:03:10 PagSeguro.Session[info]: Session ID: 434b8e25f2d84c2fa08a7d33ddfccd7f
+15/02/2021 18:04:15 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 18:04:16 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:04:16 PagSeguro.Checkout[info]: Params: 
+15/02/2021 18:04:23 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: DF5E9D79-AFF7-4824-8F4D-5AE6D91013B1
+15/02/2021 18:06:18 PagSeguro.Session[info]: Begin
+15/02/2021 18:06:18 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:06:24 PagSeguro.Session[info]: Session ID: 8b4990e879a84dd0921bb31c8b128977
+15/02/2021 18:07:29 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 18:07:29 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:07:29 PagSeguro.Checkout[info]: Params: 
+15/02/2021 18:07:35 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 18:09:30 PagSeguro.Session[info]: Begin
+15/02/2021 18:09:30 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:09:36 PagSeguro.Session[info]: Session ID: 56478a156a284dd79e211a7fc26c94e7
+15/02/2021 18:11:04 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 18:11:04 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:11:04 PagSeguro.Checkout[info]: Params: 
+15/02/2021 18:11:09 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 18:13:47 PagSeguro.Session[info]: Begin
+15/02/2021 18:13:47 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:13:52 PagSeguro.Session[info]: Session ID: c449c9209e364b799cd130934d48c770
+15/02/2021 18:17:07 PagSeguro.Session[info]: Begin
+15/02/2021 18:17:07 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:17:13 PagSeguro.Session[info]: Session ID: 321f5a6f70014aaf99081c331d50818c
+15/02/2021 18:18:09 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 18:18:09 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:18:09 PagSeguro.Checkout[info]: Params: 
+15/02/2021 18:18:15 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 18:19:17 PagSeguro.Session[info]: Begin
+15/02/2021 18:19:17 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:19:22 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 18:19:25 PagSeguro.Session[info]: Begin
+15/02/2021 18:19:25 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:19:31 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 18:19:33 PagSeguro.Session[info]: Begin
+15/02/2021 18:19:33 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:19:39 PagSeguro.Session[info]: Session ID: 71e3c959165d4d36b74a931cac760d4d
+15/02/2021 18:20:58 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 18:20:58 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:20:58 PagSeguro.Checkout[info]: Params: 
+15/02/2021 18:21:04 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 18:23:12 PagSeguro.Session[info]: Begin
+15/02/2021 18:23:12 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:23:18 PagSeguro.Session[info]: Session ID: e91bc188d30b49ac9e48fb4f9de709b1
+15/02/2021 18:24:37 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 18:24:37 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:24:38 PagSeguro.Checkout[info]: Params: 
+15/02/2021 18:24:43 PagSeguro.DirectPayment.CreditCard[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/transactions/</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/transactions/</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/transactions/) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 18:26:54 PagSeguro.Session[info]: Begin
+15/02/2021 18:26:54 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:27:00 PagSeguro.Session[info]: Session ID: 908777ab9b15486cb261413beffcfb67
+15/02/2021 18:27:55 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 18:27:55 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:27:55 PagSeguro.Checkout[info]: Params: 
+15/02/2021 18:28:00 PagSeguro.DirectPayment.CreditCard[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/transactions/</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/transactions/</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/transactions/) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 18:30:06 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 18:30:06 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:30:06 PagSeguro.Checkout[info]: Params: 
+15/02/2021 18:30:13 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 18:37:25 PagSeguro.Session[info]: Begin
+15/02/2021 18:37:25 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:37:31 PagSeguro.Session[info]: Session ID: b5edaaddcedb4e1eb3cfa11efc88397b
+15/02/2021 18:38:55 PagSeguro.Session[info]: Begin
+15/02/2021 18:38:55 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:39:01 PagSeguro.Session[info]: Session ID: 0a211915dd364d92b4249d2c02e18c85
+15/02/2021 18:40:15 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 18:40:15 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:40:16 PagSeguro.Checkout[info]: Params: 
+15/02/2021 18:40:21 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: sp</message></error><error><code>53065</code><message>billing address state invalid value: sp</message></error></errors>
+15/02/2021 18:56:59 PagSeguro.Session[info]: Begin
+15/02/2021 18:56:59 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:57:04 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 18:57:06 PagSeguro.Session[info]: Begin
+15/02/2021 18:57:06 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:57:12 PagSeguro.Session[info]: Session ID: e38b3def1c97470e90d93d995d986d77
+15/02/2021 18:58:29 PagSeguro.Session[info]: Begin
+15/02/2021 18:58:29 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:58:35 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 18:58:37 PagSeguro.Session[info]: Begin
+15/02/2021 18:58:37 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 18:58:43 PagSeguro.Session[info]: Session ID: 5b39b4e2a385430c872791741dcf55df
+15/02/2021 19:00:04 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:00:04 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:00:04 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:00:10 PagSeguro.DirectPayment.CreditCard[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/transactions/</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/transactions/</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/transactions/) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 19:00:39 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:00:39 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:00:39 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:00:47 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: EFA7D625-1D6F-4E8A-9CAD-B8F32265260D
+15/02/2021 19:01:46 PagSeguro.Session[info]: Begin
+15/02/2021 19:01:46 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:01:52 PagSeguro.Session[info]: Session ID: 64dbab1327fa45e8b7113be93faae107
+15/02/2021 19:03:52 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:03:52 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:03:52 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:04:00 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 7BC1C4BC-84BF-4CB7-8C11-A5E71F629A34
+15/02/2021 19:10:39 PagSeguro.Session[info]: Begin
+15/02/2021 19:10:39 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:10:45 PagSeguro.Session[info]: Session ID: facd53bc30f742b89b0fce3210ac90bd
+15/02/2021 19:12:20 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:12:20 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:12:20 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:12:28 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: A356E279-D7BA-4B0F-92DD-D7BE67A3792F
+15/02/2021 19:13:55 PagSeguro.Session[info]: Begin
+15/02/2021 19:13:55 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:14:01 PagSeguro.Session[info]: Session ID: d57f6878c665430f97c60f8135ee14c8
+15/02/2021 19:19:37 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:19:37 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:19:37 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:19:44 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 963C2E39-426D-4E43-91BA-2D6B72814F07
+15/02/2021 19:26:21 PagSeguro.Session[info]: Begin
+15/02/2021 19:26:21 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:26:27 PagSeguro.Session[info]: Session ID: 5bb57001dc11423c9bf1d1c339111a75
+15/02/2021 19:27:46 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:27:46 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:27:46 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:27:56 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: E998D36B-1637-4F6A-B2B3-6DD6E82FAF97
+15/02/2021 19:32:38 PagSeguro.Session[info]: Begin
+15/02/2021 19:32:38 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:32:44 PagSeguro.Session[info]: Session ID: 3f5773fc5d6048e4834cd58346340460
+15/02/2021 19:33:51 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:33:51 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:33:51 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:33:58 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: B9719C9A-AD99-40BB-BF25-BD714E0D6605
+15/02/2021 19:34:04 PagSeguro.Session[info]: Begin
+15/02/2021 19:34:04 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:34:10 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 19:34:15 PagSeguro.Session[info]: Begin
+15/02/2021 19:34:15 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:34:21 PagSeguro.Session[info]: Session ID: 47e153ba26db4544859f0f01a37fed12
+15/02/2021 19:35:49 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:35:49 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:35:49 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:35:57 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 2D3E37EA-DC00-4221-80BB-6EBF31D4C6AC
+15/02/2021 19:37:03 PagSeguro.Session[info]: Begin
+15/02/2021 19:37:03 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:37:09 PagSeguro.Session[info]: Session ID: 44f3c118e1334f28bcc05edcb3b4317c
+15/02/2021 19:38:19 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:38:19 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:38:19 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:38:27 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 1F90213B-8017-4431-B5FB-E83CE7BB74C4
+15/02/2021 19:44:35 PagSeguro.Session[info]: Begin
+15/02/2021 19:44:35 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:44:41 PagSeguro.Session[info]: Session ID: 1a412b6634ed4cb89b48f39de546a0e7
+15/02/2021 19:44:58 PagSeguro.Session[info]: Begin
+15/02/2021 19:44:59 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:45:05 PagSeguro.Session[info]: Session ID: 50f3565f303e4cd092f7c047eb0d9aba
+15/02/2021 19:46:09 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:46:09 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:46:09 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:46:14 PagSeguro.DirectPayment.CreditCard[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/transactions/</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/transactions/</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/transactions/) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 19:48:20 PagSeguro.Session[info]: Begin
+15/02/2021 19:48:20 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:48:26 PagSeguro.Session[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v2/sessions</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v2/sessions</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v2/sessions) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 19:48:39 PagSeguro.Session[info]: Begin
+15/02/2021 19:48:39 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:48:45 PagSeguro.Session[info]: Session ID: b22fa7ddcd024eeaa365891bb6a9105b
+15/02/2021 19:50:05 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 19:50:05 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 19:50:05 PagSeguro.Checkout[info]: Params: 
+15/02/2021 19:50:17 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:03:12 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:03:12 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:03:19 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:05:23 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:05:23 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:05:29 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:05:59 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:05:59 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:06:05 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:06:31 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:06:31 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:06:37 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:09:03 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:09:03 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:09:10 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:11:24 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:11:24 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:11:29 PagSeguro.Transactions.Search.Code[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v3/transactions/C779EC4673C04012978D195AF092D035/</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v3/transactions/C779EC4673C04012978D195AF092D035/</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v3/transactions/C779EC4673C04012978D195AF092D035/) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 20:11:31 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:11:32 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:11:38 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:12:14 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:12:14 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:12:20 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:21:43 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:21:44 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:21:50 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:22:02 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:22:02 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:22:08 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:22:32 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:22:32 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:22:38 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:23:16 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:23:17 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:23:23 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:23:39 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:23:39 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:23:45 PagSeguro.Transactions.Search.Code[error]: <html><head><title>JBossWeb/2.0.1.GA - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /pagseguro-api/v3/transactions/C779EC4673C04012978D195AF092D035/</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/pagseguro-api/v3/transactions/C779EC4673C04012978D195AF092D035/</u></p><p><b>description</b> <u>The requested resource (/pagseguro-api/v3/transactions/C779EC4673C04012978D195AF092D035/) is not available.</u></p><HR size="1" noshade="noshade"><h3>JBossWeb/2.0.1.GA</h3></body></html>
+15/02/2021 20:23:46 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:23:46 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:23:52 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:24:09 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:24:09 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:24:16 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:25:10 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:25:10 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:25:16 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:25:36 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:25:36 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:25:42 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:26:04 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:26:04 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:26:10 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:26:45 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:26:45 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:26:51 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:27:33 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:27:33 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:27:39 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:27:58 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:27:58 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:28:04 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 20:44:24 PagSeguro.Transactions.Search.Code[info]: Begin
+15/02/2021 20:44:24 PagSeguro.Transactions.Search.Code[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/C779EC4673C04012978D195AF092D035/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 20:44:30 PagSeguro.Transactions.Search.Code[info]: Date: 2021-02-15T16:50:04.000-03:00, Code: C779EC46-73C0-4012-978D-195AF092D035
+15/02/2021 21:08:17 PagSeguro.Session[info]: Begin
+15/02/2021 21:08:19 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 21:08:25 PagSeguro.Session[info]: Session ID: d19de384a41c47339a887b426f3fb097
+15/02/2021 21:09:42 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 21:09:42 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 21:09:43 PagSeguro.Checkout[info]: Params: 
+15/02/2021 21:09:48 PagSeguro.DirectPayment.CreditCard[error]: <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?><errors><error><code>53034</code><message>shipping address state invalid value: 0</message></error><error><code>53065</code><message>billing address state invalid value: 0</message></error></errors>
+15/02/2021 21:10:33 PagSeguro.Session[info]: Begin
+15/02/2021 21:10:33 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 21:10:39 PagSeguro.Session[info]: Session ID: d1fda88e7dd44b46b51f232e9aa29529
+15/02/2021 21:12:02 PagSeguro.DirectPayment.CreditCard[info]: Begin
+15/02/2021 21:12:02 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+15/02/2021 21:12:02 PagSeguro.Checkout[info]: Params: 
+15/02/2021 21:12:10 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: BFD6972D-0127-4B6F-B0CD-842DD6A98587
