@@ -631,7 +631,7 @@ if(isset($_POST['pagamentos'], $_POST['total-a-pagar'])){
 
                             if(xmlToken.readyState == 4 && xmlToken.status == 200){
                                 
-                                window.location.href = "compra-realizada-com-sucesso.php"
+                                window.location.href = `compra-realizada-com-sucesso.php?idUser=${idUser}&name=${nomeCliente.value}&email=${emailCliente.value}&phone=${celularCliente.value}&address=${ruaCliente.value}&numberAddress=${numeroCliente.value}&district=${bairroCliente.value}&cep=${cepCliente.value}&complemento=${complementoCliente.value}&city=${cidadeCliente.value}&estado=${estadoCliente.value}&parcela=${selectParcelaCartao}`
 
                             }
                             if(xmlToken.response == "Erro no pagamento"){

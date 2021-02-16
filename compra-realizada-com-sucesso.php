@@ -3,8 +3,12 @@ require_once "class/carrinho.class.php";
 require_once "vendor/autoload.php";
 require_once "class/config_pag_seguro.php";
 require_once "class/user.class.php";
+require_once "class/info_pagseguro.class.php";
+require_once "class/register_product.class.php";
 $user = new User;
 $cart = new Cart;
+$pagamentos = new Pagamentos;
+$produto = new Product;
 
 if(isset($_SESSION['user_client'])){
 
@@ -30,6 +34,34 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     }else{
         header("Location:index.php");
     }
+}
+
+if(isset($_GET['idUser'])){
+
+    $idUser = $_GET['idUser'];
+    $nome = utf8_decode($_GET['name']);
+    $email = $_GET['email'];
+    $celular = $_GET['phone'];
+    $endereco = utf8_decode($_GET['address']);
+    $numberAddress = $_GET['numberAddress'];
+    $bairro = utf8_decode($_GET['district']);
+    $cep = $_GET['cep'];
+    $complemento = utf8_decode($_GET['complemento']);
+    $cidade = utf8_decode($_GET['city']);
+    $estado = $_GET['estado'];
+    $parcela = $_GET['parcela'];
+
+    $pagamentos->checkoutCreditCard($idUser, $nome, $email, $celular, $cep, $endereco, $bairro, $numberAddress, $complemento, $cidade, $estado, $parcela);
+
+    $items = $cart->getList();
+
+    foreach($items as $products){
+
+        $idCompra = $products['id'];
+        $qtdCompra = $products['qtd'];
+        $pagamentos->insertPurchaseCart($idUser, $idCompra, $qtdCompra);
+    }
+
 }
 
 ?>
@@ -201,7 +233,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 </nav>
             </div>
         </div>
-
         
 
         <style>
@@ -347,6 +378,10 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 
 
 </html>
+
+<script>
+  window.history.replaceState({}, "Hide", "http://localhost/projetos/e-commerce/compra-realizada-com-sucesso.php")
+</script>
 
 
 <style>

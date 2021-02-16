@@ -5,12 +5,11 @@ class Pagamentos {
 
     use Conection;
 
-    public function checkoutCreditCard($idUser, $nomeCliente, $emailCliente, $cpfCliente, $telefoneCliente, $cepCliente, $ruaCliente, $bairroCliente, $numeroEndereco, $complementoEndereco, $cidadeCliente, $estadoCliente, $parcelaCartao, $valorFrete, $idPagSeguro, $tokenCard){
+    public function checkoutCreditCard($idUser, $nomeCliente, $emailCliente, $telefoneCliente, $cepCliente, $ruaCliente, $bairroCliente, $numeroEndereco, $complementoEndereco, $cidadeCliente, $estadoCliente, $parcelaCartao){
         
         $sql = "INSERT INTO purchase SET
         id_user = :id_user, 
         nome_completo = :nome_completo,
-        cpf_cliente = :cpf_cliente,
         telefone_cliente = :telefone_cliente,
         cep_cliente = :cep_cliente,
         rua_cliente = :rua_cliente,
@@ -20,14 +19,10 @@ class Pagamentos {
         cidade_cliente = :cidade_cliente,
         estado_cliente = :estado_cliente,
         email_cliente = :email_cliente,
-        parcela_cartao = :parcela_cartao,
-        valor_frete = :valor_frete,
-        id_pag_seguro = :id_pag_seguro,
-        token_card = :token_card,";
+        parcela_cartao = :parcela_cartao";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":id_user", $idUser);
         $sql->bindValue(":nome_completo", $nomeCliente);
-        $sql->bindValue(":cpf_cliente", $cpfCliente);
         $sql->bindValue(":telefone_cliente", $telefoneCliente);
         $sql->bindValue(":cep_cliente", $cepCliente);
         $sql->bindValue(":rua_cliente", $ruaCliente);
@@ -38,11 +33,18 @@ class Pagamentos {
         $sql->bindValue(":estado_cliente", $estadoCliente);
         $sql->bindValue(":email_cliente", $emailCliente);
         $sql->bindValue(":parcela_cartao", $parcelaCartao);
-        $sql->bindValue(":valor_frete", $valorFrete);
-        $sql->bindValue(":id_pag_seguro", $idPagSeguro);
-        $sql->bindValue(":token_card", $tokenCard);
         $sql->execute();
         
+    }
+
+    public function insertPurchaseCart($idUser, $idCompra, $qtdCompra){
+        $sql = "INSERT INTO purchase_cart SET id_user = :id_user, id_compra = :id_compra, quantidade_compra = :quantidade_compra";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id_user", $idUser);
+        $sql->bindValue(":id_compra", $idCompra);
+        $sql->bindValue(":quantidade_compra", $qtdCompra);
+        $sql->execute();
+
     }
 
     public function selectInfoCostumer(){
