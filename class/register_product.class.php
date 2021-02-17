@@ -5,11 +5,12 @@ class Product{
 
     use Conection;
 
-    public function cadastrarProduto($titulo, $descricao, $preco, $img, $novoProduto, $qtd){
+    public function cadastrarProduto($titulo, $descricao, $preco, $img, $novoProduto, $qtd, $largura, $peso, $altura, $comprimento, $diametro){
         $sql = 'INSERT INTO register_product SET titulo_produto = :titulo_produto,
         descricao_produto = :descricao_produto, preco_produto = :preco_produto,
         img_produto = :img_produto, novo_produto = :novo_produto,
-        status_produto = :status_produto, qtd = :qtd';
+        status_produto = :status_produto, qtd = :qtd, largura = :largura,
+        peso = :peso, altura = :altura, comprimento = :comprimento, diametro = :diametro';
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":titulo_produto", $titulo);
         $sql->bindValue(":descricao_produto", $descricao);
@@ -18,6 +19,11 @@ class Product{
         $sql->bindValue(":novo_produto", $novoProduto);
         $sql->bindValue(":status_produto", 1);
         $sql->bindValue(":qtd", $qtd);
+        $sql->bindValue(":largura", $largura);
+        $sql->bindValue(":peso", $peso);
+        $sql->bindValue(":altura", $altura);
+        $sql->bindValue(":comprimento", $comprimento);
+        $sql->bindValue(":diametro", $diametro);
         $sql->execute();
 
         return true;
@@ -32,10 +38,12 @@ class Product{
         }
     }
 
-    public function updateProduct($titulo_Produto, $descricao_produto, $preco_produto, $img_produto, $novo_produto, $id, $qtd){
+    public function updateProduct($titulo_Produto, $descricao_produto, $preco_produto, $img_produto, $novo_produto, $id, $qtd, $largura, $peso, $altura, $comprimento, $diametro){
         $sql = "UPDATE register_product SET titulo_produto = :titulo_produto,
         descricao_produto = :descricao_produto, preco_produto = :preco_produto,
-        img_produto = :img_produto, novo_produto = :novo_produto, qtd = :qtd WHERE id = :id";
+        img_produto = :img_produto, novo_produto = :novo_produto, qtd = :qtd,
+        largura = :largura, peso = :peso, altura = :altura, comprimento = :comprimento,
+        diametro = :diametro WHERE id = :id";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":titulo_produto", $titulo_Produto);
         $sql->bindValue(":descricao_produto", $descricao_produto);
@@ -43,6 +51,11 @@ class Product{
         $sql->bindValue(":img_produto", $img_produto);
         $sql->bindValue(":novo_produto", $novo_produto);
         $sql->bindValue(":qtd", $qtd);
+        $sql->bindValue(":largura", $largura);
+        $sql->bindValue(":peso", $peso);
+        $sql->bindValue(":altura", $altura);
+        $sql->bindValue(":comprimento", $comprimento);
+        $sql->bindValue(":diametro", $diametro);
         $sql->bindValue(":id", $id);
         $sql->execute();
 
@@ -108,6 +121,61 @@ class Product{
 
     public function getProductQtd($id){
         $sql = "SELECT qtd FROM register_product WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return $sql->fetch();
+        }
+    }
+
+    public function getProductLargura($id){
+        $sql = "SELECT largura FROM register_product WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return $sql->fetch();
+        }
+    }
+
+    public function getProductPeso($id){
+        $sql = "SELECT peso FROM register_product WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return $sql->fetch();
+        }
+    }
+
+    public function getProductAltura($id){
+        $sql = "SELECT altura FROM register_product WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return $sql->fetch();
+        }
+    }
+
+    public function getProductComprimento($id){
+        $sql = "SELECT comprimento FROM register_product WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            return $sql->fetch();
+        }
+    }
+
+    public function getProductDiametro($id){
+        $sql = "SELECT diametro FROM register_product WHERE id = :id";
         $sql = $this->pdo->prepare($sql);
         $sql->bindValue(":id", $id);
         $sql->execute();

@@ -38,11 +38,11 @@ class Cart{
                     'price' => $info['preco_produto'],
                     'img' => $info['img_produto'],
                     'description' => utf8_encode($info['descricao_produto']),
-                    'weight' => $info['weight'],
-                    'width' => $info['width'],
-                    'height' => $info['height'],
-                    'length' => $info['length'],
-                    'diameter' => $info['diameter']
+                    'weight' => $info['peso'],
+                    'width' => $info['largura'],
+                    'height' => $info['altura'],
+                    'length' => $info['comprimento'],
+                    'diameter' => $info['diametro']
 
                 );
             }

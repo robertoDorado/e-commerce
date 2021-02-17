@@ -12,8 +12,13 @@ if(isset($_POST["novo_produto"])){
     $novoProduto = utf8_decode(addslashes($_POST["novo_produto"]));
     $idProduto = $_POST["id-produto"];
     $qtd = $_POST["qtd"];
+    $largura = $_POST['largura'];
+    $peso = $_POST['peso'];
+    $altura = $_POST['altura'];
+    $comprimento = $_POST['comprimento'];
+    $diametro = $_POST['diametro'];
 
-    $updateOk = $product->updateProduct($tituloProduto, $descricaoProduto, $precoProduto, $imgProduto, $novoProduto, $idProduto, $qtd);
+    $updateOk = $product->updateProduct($tituloProduto, $descricaoProduto, $precoProduto, $imgProduto, $novoProduto, $idProduto, $qtd, $largura, $peso, $altura, $comprimento, $diametro);
 
     if($updateOk){
         echo '
@@ -33,8 +38,13 @@ if(isset($_POST["novo_produto"])){
     $novoProduto = utf8_decode(addslashes($_POST["novo_produto"]));
     $idProduto = $_POST["id-produto"];
     $qtd = $_POST["qtd"];
+    $largura = $_POST['largura'];
+    $peso = $_POST['peso'];
+    $altura = $_POST['altura'];
+    $comprimento = $_POST['comprimento'];
+    $diametro = $_POST['diametro'];
 
-    $updateOk = $product->updateProduct($tituloProduto, $descricaoProduto, $precoProduto, $imgProduto, $novoProduto, $idProduto, $qtd);
+    $updateOk = $product->updateProduct($tituloProduto, $descricaoProduto, $precoProduto, $imgProduto, $novoProduto, $idProduto, $qtd, $largura, $peso, $altura, $comprimento, $diametro);
 
     if($updateOk){
         echo '

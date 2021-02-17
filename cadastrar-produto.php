@@ -9,13 +9,23 @@ if(isset($_POST["novo_produto"])){
     $descricao = utf8_decode(addslashes($_POST["descricao"]));
     $preco = utf8_decode(addslashes($_POST["preco"]));
     $qtd = $_POST["qtd"];
+    $largura = $_POST['largura'];
+    $peso = $_POST['peso'];
+    $altura = $_POST['altura'];
+    $comprimento = $_POST['comprimento'];
+    $diametro = $_POST['diametro'];
 
     $produtoCadastrado = $product->cadastrarProduto($titulo, 
     $descricao, 
     $preco, 
     $_FILES["fileUpload"]["name"], 
     utf8_decode(addslashes($_POST["novo_produto"])),
-    $qtd);
+    $qtd,
+    $largura,
+    $peso,
+    $altura,
+    $comprimento,
+    $diametro);
 
     if($produtoCadastrado){
       $param = "true";
