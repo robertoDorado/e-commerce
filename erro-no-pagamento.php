@@ -201,7 +201,118 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             </div>
         </div>
 
-        
+        <!-- Responsive Nav -->
+
+        <div class="nav-container hidden-md hidden-lg">
+            <div>
+                <nav class="bar bar-toggle">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <div class="bar__module">
+                                    <a href="index.html"> <img class="logo logo-dark" alt="logo" src="img/logo/logo-1.png"> <img class="logo logo-light" alt="logo" src="img/logo/logo-1.png"> </a>
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end">
+                                <div class="bar__module">
+                                    <a class="menu-toggle pull-right" href="#" data-notification-link="sidebar-menu"> <i class="stack-interface stack-menu"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="notification pos-right pos-top side-menu bg--white" data-notification-link="sidebar-menu" data-animation="from-right">
+                    <div class="side-menu__module pos-vertical-center text-right">
+                    <ul class="menu-horizontal text-left">
+                                    <li class="h4"> <a href="index.php">
+                                        Home
+                                    </a> </li>
+                                        <li class="dropdown"> <span class="dropdown__trigger h4">
+                                        Roupas
+                                    </span>
+                                            <div class="dropdown__container">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="dropdown__content col-lg-2">
+                                                            <ul class="menu-vertical">
+                                                                <li> <a href="#">Femininas</a> </li>
+                                                                <li> <a href="#">Masculinas</a> </li>
+                                                                <li> <a href="#">Infantis</a> </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="h4"> <a href="#">
+                                        Novidades
+                                    </a> </li class="h4">
+                                        <li class="h4"> <a href="#">
+                                        Beleza & Saúde
+                                    </a> </li>
+                                        <li class="h4"> <a href="#">
+                                        Lingerie
+                                    </a> </li>
+                                        <li class="h4"> <a href="#">
+                                        Fitness
+                                    </a> </li>
+                                        <li class="dropdown"> <span class="dropdown__trigger h4" style="margin-bottom:0;">
+                                        Nossas Ofertas
+                                    </span>
+                                    <div class="dropdown__container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="dropdown__content col-lg-2">
+                                                    <ul class="menu-vertical">
+                                                        <li><span style="color:black;font-weight:bold;">Acessórios Femininos</span></li>
+                                                        <li> <a href="#">Anéis</a> </li>
+                                                        <li> <a href="#">Brincos</a> </li>
+                                                        <li> <a href="#">Bolsas</a> </li>
+                                                        <li> <a href="#">Bonés e Chapéus</a> </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        <?php if(isset($_SESSION['user_client'])):?>
+                        <div class="bar__module">
+                            <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
+                                <?php foreach ($data as $newData):?>
+                                    Olá <?php echo $newData['nome']; ?>
+                                <?php endforeach; ?>
+                        </span> </a>
+                        </div>
+                        <a style="border:none;color:white;width:100%;font-weight:bold;" class="btn btn--primary" href="sair-client.php">Sair</a><br>
+                        <a href="carrinho.php" style="margin-right:130px;"><i class="fa fa-shopping-cart select-cart"></i></a>
+                        <?php if(isset($_SESSION['cart'])):?>
+                        <?php $items = $cart->getList();?>
+                        <?php if($items):?>
+                            <span class="item-cart"><?php echo count($items); ?></span>
+                        <?php else:?>
+                            <span class="item-cart">0</span>
+                        <?php endif;?>
+                        <?php endif;?>
+                        <?php else: ?>
+                            <div class="bar__module">
+                            <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
+                                Faça o seu Login!
+                        </span> </a>
+                        </div>
+                        <?php endif;?>
+                    </div>
+                    <div class="side-menu__module pos-bottom pos-absolute col-12 text-right">
+                        <ul class="social-list list-inline list--hover">
+                            <li><a href="#"><i class="socicon socicon-google icon icon--xs"></i></a></li>
+                            <li><a href="#"><i class="socicon socicon-twitter icon icon--xs"></i></a></li>
+                            <li><a href="#"><i class="socicon socicon-facebook icon icon--xs"></i></a></li>
+                            <li><a href="#"><i class="socicon socicon-instagram icon icon--xs"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <style>
             .item-cart{
@@ -233,6 +344,17 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 opacity:.7;
                 transition:.5s;
             }
+            @media screen and (max-width:700px){
+                .select-cart{
+                    position:relative;
+                }
+                .item-cart{
+                    position:absolute;
+                    top:456px;
+                    right:146px;
+                    color:white !important;
+                }
+            }
         </style>
         <style>
             .bar .logo{
@@ -252,18 +374,30 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 
 <body class="dropdowns--hover" data-smooth-scroll-offset="77">
 
-        <section class="text-center" style="margin-top:50px;">
+        <section class="text-center select--erro-compra" style="margin-top:50px;">
             <div class="logo text-center"> <a href="index.html" title="Oxyy"><img src="img/logo/logo-meraki-admin.png" alt="meraki"></a> </div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-lg-8">
-                        <h1>Erro no Processo  de compra!</h1>
+                        <h1>Erro no Processo de compra!</h1>
                         <p class="lead"> A sua compra não pode ser realizada, retorne a página inicial e entre em contato conosco!</p>
                     </div>
                 </div>
                 <a href="index.php">Página inicial</a>
             </div>
         </section>
+
+        <style>
+            .select--erro-compra{
+                margin-top:50px;
+            }
+            @media screen and (max-width:700px){
+                .select--erro-compra{
+                    margin-top:0 !important;
+                }
+
+            }
+        </style>
 
 </body>
 

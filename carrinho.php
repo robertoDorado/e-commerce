@@ -76,7 +76,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 </script>
 
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" style="overflow-x:hidden;">
     <head>
         <meta charset="utf-8">
         <title>Meraki</title>
@@ -144,71 +144,24 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                                         <li class="dropdown"> <span class="dropdown__trigger">
                                         Nossas Ofertas
                                     </span>
-                                            <div class="dropdown__container">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="dropdown__content row w-100">
-                                                            <div class="col-lg-3">
-                                                                <h5>Acessórios Femininos</h5>
-                                                                <ul class="menu-vertical">
-                                                                    <li> <a href="#">Anéis</a> </li>
-                                                                    <li> <a href="#">Brincos</a> </li>
-                                                                    <li> <a href="#">Bolsas</a> </li>
-                                                                    <li> <a href="#">Bonés e Chapéus</a> </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <h5>Coleção Masculina</h5>
-                                                                <ul class="menu-vertical">
-                                                                    <li> <a href="#">Camisa</a> </li>
-                                                                    <li> 
-                                                                      <a href="#">Polo</a> 
-                                                                      <ul class="submenu-masculina">
-                                                                        <li><a href="#">Polo Básica</a></li>
-                                                                        <li><a href="#">Polo Listrada</a></li>
-                                                                        <li><a href="#">Polo Moda</a></li>
-                                                                      </ul>
-                                                                    </li>
-                                                                    <li>
-                                                                      <a href="#">Camisetas</a>
-                                                                      <ul class="submenu-masculina">
-                                                                        <li><a href="#">Camiseta básica</a></li>
-                                                                        <li><a href="#">Camiseta estampada</a></li>
-                                                                        <li><a href="#">Camiseta listrada</a></li>
-                                                                      </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <h5>Moda Feminina</h5>
-                                                                <ul class="menu-vertical">
-                                                                    <li> <a href="#">Blusa</a> </li>
-                                                                    <li> <a href="#">Body</a> </li>
-                                                                    <li> <a href="#">Camisa</a> </li>
-                                                                    <li> <a href="#">Camiseta</a> </li>
-                                                                    <li> <a href="#">Vestido</a> </li>
-                                                                    <li> <a href="#">Blazer</a> </li>
-                                                                    <li> <a href="#">Casaco e Jaqueta</a> </li>
-                                                                    <li> <a href="#">Cardigan</a> </li>
-                                                                    <li> <a href="#">Moletom</a> </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <h5>Beleza e Perfume</h5>
-                                                                <ul class="menu-vertical">
-                                                                    <li> <a href="#">Feminino</a> </li>
-                                                                    <li> <a href="#">Masculino</a> </li>
-                                                                    <li> <a href="#">Kit Feminino</a> </li>
-                                                                    <li> <a href="#">Kit Masculino</a> </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                    <div class="dropdown__container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="dropdown__content col-lg-2">
+                                                    <ul class="menu-vertical">
+                                                        <li><span style="color:black;font-weight:bold;">Acessórios Femininos</span></li>
+                                                        <li> <a href="#">Anéis</a> </li>
+                                                        <li> <a href="#">Brincos</a> </li>
+                                                        <li> <a href="#">Bolsas</a> </li>
+                                                        <li> <a href="#">Bonés e Chapéus</a> </li>
+                                                    </ul>
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                                 <?php if(isset($_SESSION['user_client'])):?>
                                 <div class="bar__module">
                                     <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
@@ -239,6 +192,121 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             </div>
         </div>
 
+
+        <!-- Responsive Nav -->
+
+        <div class="nav-container hidden-md hidden-lg">
+            <div>
+                <nav class="bar bar-toggle">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <div class="bar__module">
+                                    <a href="index.html"> <img class="logo logo-dark" alt="logo" src="img/logo/logo-1.png"> <img class="logo logo-light" alt="logo" src="img/logo/logo-1.png"> </a>
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end">
+                                <div class="bar__module">
+                                    <a class="menu-toggle pull-right" href="#" data-notification-link="sidebar-menu"> <i class="stack-interface stack-menu"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="notification pos-right pos-top side-menu bg--white" data-notification-link="sidebar-menu" data-animation="from-right">
+                    <div class="side-menu__module pos-vertical-center text-right">
+                    <ul class="menu-horizontal text-left">
+                                        <li class="h4"> <a href="index.php">
+                                        Home
+                                    </a> </li>
+                                        <li class="dropdown"> <span class="dropdown__trigger h4">
+                                        Roupas
+                                    </span>
+                                            <div class="dropdown__container">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="dropdown__content col-lg-2">
+                                                            <ul class="menu-vertical">
+                                                                <li> <a href="#">Femininas</a> </li>
+                                                                <li> <a href="#">Masculinas</a> </li>
+                                                                <li> <a href="#">Infantis</a> </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="h4"> <a href="#">
+                                        Novidades
+                                    </a> </li class="h4">
+                                        <li class="h4"> <a href="#">
+                                        Beleza & Saúde
+                                    </a> </li>
+                                        <li class="h4"> <a href="#">
+                                        Lingerie
+                                    </a> </li>
+                                        <li class="h4"> <a href="#">
+                                        Fitness
+                                    </a> </li>
+                                        <li class="dropdown"> <span class="dropdown__trigger h4" style="margin-bottom:0;">
+                                        Nossas Ofertas
+                                    </span>
+                                    <div class="dropdown__container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="dropdown__content col-lg-2">
+                                                    <ul class="menu-vertical">
+                                                        <li><span style="color:black;font-weight:bold;">Acessórios Femininos</span></li>
+                                                        <li> <a href="#">Anéis</a> </li>
+                                                        <li> <a href="#">Brincos</a> </li>
+                                                        <li> <a href="#">Bolsas</a> </li>
+                                                        <li> <a href="#">Bonés e Chapéus</a> </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        <?php if(isset($_SESSION['user_client'])):?>
+                        <div class="bar__module">
+                            <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
+                                <?php foreach ($data as $newData):?>
+                                    Olá <?php echo $newData['nome']; ?>
+                                <?php endforeach; ?>
+                        </span> </a>
+                        </div>
+                        <a style="border:none;color:white;width:100%;font-weight:bold;" class="btn btn--primary" href="sair-client.php">Sair</a><br>
+                        <a href="carrinho.php" style="margin-right:130px;"><i class="fa fa-shopping-cart select-cart"></i></a>
+                        <?php if(isset($_SESSION['cart'])):?>
+                        <?php $items = $cart->getList();?>
+                        <?php if($items):?>
+                            <span class="item-cart"><?php echo count($items); ?></span>
+                        <?php else:?>
+                            <span class="item-cart">0</span>
+                        <?php endif;?>
+                        <?php endif;?>
+                        <?php else: ?>
+                            <div class="bar__module">
+                            <a class="btn btn--sm btn--primary type--uppercase" href="login-client.php"> <span class="btn__text">
+                                Faça o seu Login!
+                        </span> </a>
+                        </div>
+                        <?php endif;?>
+                    </div>
+                    <div class="side-menu__module pos-bottom pos-absolute col-12 text-right">
+                        <ul class="social-list list-inline list--hover">
+                            <li><a href="#"><i class="socicon socicon-google icon icon--xs"></i></a></li>
+                            <li><a href="#"><i class="socicon socicon-twitter icon icon--xs"></i></a></li>
+                            <li><a href="#"><i class="socicon socicon-facebook icon icon--xs"></i></a></li>
+                            <li><a href="#"><i class="socicon socicon-instagram icon icon--xs"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <style>
             .item-cart{
                 background:#4a90e2;
@@ -268,6 +336,17 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             .select-cart:hover{
                 opacity:.7;
                 transition:.5s;
+            }
+            @media screen and (max-width:700px){
+                .select-cart{
+                    position:relative;
+                }
+                .item-cart{
+                    position:absolute;
+                    top:456px;
+                    right:146px;
+                    color:white !important;
+                }
             }
         </style>
             
@@ -304,13 +383,21 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 </div>
             </section>
 
+            <style>
+                @media screen and (max-width:700px){
+                    .imagebg{
+                        margin-top:0 !important;
+                    }
+                }
+            </style>
+
             <?php $items = $cart->getList(); ?>
             <?php if($items):?>
                 <section style="display:none;">
                 <div class="container">
                 <div class="col-md-12">
                     <h4>0 produtos no carrinho</h4>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 area"  align="center">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 area" align="center">
                             <i class="fa fa-shopping-cart item" aria-hidden="true"></i>
                             <p>Seu carrinho está vazio. Continue comprando para encontrar um produto!</p>
                             <a class="btn btn-danger btn-compra" href="index.php">Continuar Comprando</a>
@@ -403,7 +490,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <form method="POST">
+                            <form method="POST" class="select--form-frete">
                             <div class="form-group">
                                 <h4 style="margin-bottom:20px;">Calculo do frete</h4>
                                 <label for="cep">Seu CEP:</label><br>
@@ -439,6 +526,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 </div>
             </section>
             <?php endif;?>
+
+            
 
             <script>
                 const masks = {
@@ -601,6 +690,56 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                     font-size:120px;
                     margin-top:2%;
                     color:#e8e9eb;
+                }
+                @media screen and (max-width:700px){
+                    .area-product{
+                        width:100% !important;
+                        height:200px !important;
+                        margin-bottom:20px;
+                    }
+                    .area-product img{
+                        width:120px !important;
+                        height:100px !important;
+                        position:absolute;
+                        top:20px;
+                        left:10px;
+                    }
+                    .text-product h4{
+                        font-size:15px;
+                        margin:0 !important;
+                    }
+                    .text-product{
+                        position:absolute;
+                        top:20px;
+                        left:100px;
+                        width:120px;
+                        height:80px;
+                        overflow-y:scroll;
+                    }
+                    .btn-remover{
+                        position:absolute;
+                        top:140px;
+                        left:10px;
+                    }
+                    .item-price-tag{
+                        position:absolute;
+                        left:150px;
+                        top:100px;
+                        width:120px;
+                    }
+                    .description-product{
+                        width:120px;
+                        overflow:hidden;
+                    }
+                    .description-product p{
+                        margin:0 !important;
+                    }
+                    .qtd-product{
+                        float:none;
+                    }
+                    .select--form-frete{
+                        padding-top:20px;
+                    }
                 }
             </style>
 
