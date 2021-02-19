@@ -53,6 +53,11 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
 
+        <!-- REVOLUTION BANNER CSS SETTINGS -->
+        <link rel="stylesheet" type="text/css" href="css/settings.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/home.css" media="screen">
+
     </head>
 
     <nav id="menu1" class="bar menu-principal bar-1 hidden-xs pos-fixed">
@@ -324,51 +329,194 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 
 <body class="dropdowns--hover" data-smooth-scroll-offset="77">
 
-        
-
-          <section class="bg--secondary">
-                <div class="container-fluid reset-padding-margin">
-                    <div class="row">
-                        <div class="col reset-padding">
-                            <div class="slider slider--ken-burns" data-arrows="true" data-paging="true" data-timing="10000">
-                                <ul class="slides">
-                                    <li> <img alt="Image" src="img/banner/banner-1.jpg"> </li>
-                                    <li> <img alt="Image" src="img/banner/banner-2.jpg"> </li>
-                                    <li> <img alt="Image" src="img/banner/banner-3.jpg"> </li>
-                                </ul>
+<section id="home-section" class="pb-0 pt-50 mt-90 banner-desk slider1">
+			
+            <!--
+            #################################
+                - THEMEPUNCH BANNER -
+            #################################
+            -->
+            <div class="tp-banner-container">
+                <div tp-banner class="tp-banner">
+                    <ul>	<!-- SLIDE  -->
+                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Intro Slide">
+                            <!-- MAIN IMAGE -->
+                            <img src="img/banner/banner-1.jpg" alt="Banner Linha Colors"  data-lazyload="img/banner/banner-1.jpg" 
+                                data-lazyload="img/banner/banner-1.jpg"
+                                data-bgposition="center top"
+                                data-bgfit="cover"
+                                data-bgrepeat="no-repeat"
+                                data-duration="9000"
+                                data-ease="Linear.easeNone"
+                                data-scalestart="100"
+                                data-scaleend="150"
+                                data-blurstart="0"
+                                data-blurend="0">
+                            <!-- LAYERS -->
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption finewide_medium_white lft tp-resizeme rs-parallaxlevel-0 tparrows"
+                                data-x="0"
+                                data-y="285" 
+                                data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-speed="1000"
+                                data-start="1200"
+                                data-easing="Power3.easeInOut"
+                                data-splitin="none"
+                                data-splitout="none"
+                                data-elementdelay="0.1"
+                                data-endelementdelay="0.1"
+                                style="z-index: 8; max-width: auto; max-height:450px; white-space: nowrap;">
                             </div>
-                        </div>
-                    </div>
+
+                        </li>
+                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Intro Slide">
+                            <!-- MAIN IMAGE -->
+                            <img src="img/banner/banner-2.jpg" alt="Banner Linha Colors"  data-lazyload="img/banner/banner-2.jpg"
+                                data-lazyload="img/banner/banner-2.jpg"
+                                data-bgposition="center top"
+                                data-bgfit="cover"
+                                data-bgrepeat="no-repeat"
+                                data-duration="9000"
+                                data-ease="Linear.easeNone"
+                                data-scalestart="100"
+                                data-scaleend="150"
+                                data-blurstart="0"
+                                data-blurend="0">
+                            <!-- LAYERS -->
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption finewide_medium_white lft tp-resizeme rs-parallaxlevel-0 tparrows"
+                                data-x="0"
+                                data-y="285" 
+                                data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-speed="1000"
+                                data-start="1200"
+                                data-easing="Power3.easeInOut"
+                                data-splitin="none"
+                                data-splitout="none"
+                                data-elementdelay="0.1"
+                                data-endelementdelay="0.1"
+                                style="z-index: 8; max-width: auto; max-height:450px; white-space: nowrap;">
+                            </div>
+
+                        </li>
+                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Intro Slide">
+                            <!-- MAIN IMAGE -->
+                            <img src="img/banner/banner-3.jpg" alt="Banner Linha Colors"  data-lazyload="img/banner/banner-3.jpg"
+                                data-lazyload="img/banner/banner-3.jpg"
+                                data-bgposition="center top"
+                                data-bgfit="cover"
+                                data-bgrepeat="no-repeat"
+                                data-duration="9000"
+                                data-ease="Linear.easeNone"
+                                data-scalestart="100"
+                                data-scaleend="150"
+                                data-blurstart="0"
+                                data-blurend="0">                                <!-- LAYERS -->
+                            <!-- LAYER NR. 3 -->
+                            <div class="tp-caption finewide_medium_white lft tp-resizeme rs-parallaxlevel-0 tparrows"
+                                data-x="0"
+                                data-y="285" 
+                                data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-speed="1000"
+                                data-start="1200"
+                                data-easing="Power3.easeInOut"
+                                data-splitin="none"
+                                data-splitout="none"
+                                data-elementdelay="0.1"
+                                data-endelementdelay="0.1"
+                                style="z-index: 8; max-width: auto; max-height:450px; white-space: nowrap;">
+                            </div>
+
+                        </li>
+                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Intro Slide">
+                            <!-- MAIN IMAGE -->
+                            <img src="img/banner/banner-1.jpg" alt="Banner Linha Colors"  data-lazyload="img/banner/banner-1.jpg"
+                                data-lazyload="img/banner/banner-1.jpg"
+                                data-bgposition="center top"
+                                data-bgfit="cover"
+                                data-bgrepeat="no-repeat"
+                                data-duration="9000"
+                                data-ease="Linear.easeNone"
+                                data-scalestart="100"
+                                data-scaleend="150"
+                                data-blurstart="0"
+                                data-blurend="0">                              <!-- LAYERS -->
+                            <!-- LAYER NR. 4 -->
+                            <div class="tp-caption finewide_medium_white lft tp-resizeme rs-parallaxlevel-0 tparrows"
+                                data-x="0"
+                                data-y="285" 
+                                data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-speed="1000"
+                                data-start="1200"
+                                data-easing="Power3.easeInOut"
+                                data-splitin="none"
+                                data-splitout="none"
+                                data-elementdelay="0.1"
+                                data-endelementdelay="0.1"
+                                style="z-index: 8; max-width: auto; max-height:450px; white-space: nowrap;">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="tp-bannertimer"></div>
                 </div>
+            </div>
         </section>
 
 
-          <style>
-              .reset-padding-margin{
-                padding:0;
-                margin:0;
-              }
-              .nav-link{
-                color:gray;
-              }
-              .slides img{
-                height:500px;
-              }
-              .reset-padding{
-                padding:0;
-              }
-              .bg--secondary{
-                  background:#fff;
-              }
-              @media screen and (max-width:700px){
-                .slides img{
-                    height:200px;
-                }
-                .bg--secondary{
+        <style>
+            @media screen and (max-width:700px){
+                #home-section{
                     padding-top:0;
                 }
-              }
-          </style>
+            }
+        </style>
+
+        
+        <script>
+                const tpBanner = document.querySelector('[tp-banner]')
+                const leftArrow = document.createElement('div')
+                leftArrow.classList.add('tp-leftarrow')
+                leftArrow.classList.add('tparrows')
+                leftArrow.classList.add('default')
+                leftArrow.classList.add('round')
+                leftArrow.classList.add('hidearrows')
+                leftArrow.style.position = 'absolute'
+                leftArrow.style.top = '225px'
+                leftArrow.style.marginTop = '-20px'
+                leftArrow.style.left = '20px'
+                tpBanner.append(leftArrow)
+                tpBanner.addEventListener('mouseover', () => {
+                    leftArrow.classList.remove('hidearrows')
+                    leftArrow.style.visibility = null
+                })
+                tpBanner.addEventListener('mouseout', () => {
+                    leftArrow.classList.add('hidearrows')
+                    leftArrow.style.visibility = 'hidden'
+                })
+
+                // Right Arrow
+                const rightArrow = document.createElement('div')
+                rightArrow.classList.add('tp-rightarrow')
+                rightArrow.classList.add('tparrows')
+                rightArrow.classList.add('default')
+                rightArrow.classList.add('round')
+                rightArrow.classList.add('hidearrows')
+                rightArrow.style.position = 'absolute'
+                rightArrow.style.top = '225px'
+                rightArrow.style.marginTop = '-20px'
+                rightArrow.style.right = '20px'
+                tpBanner.append(rightArrow)
+                tpBanner.addEventListener('mouseover', () => {
+                    rightArrow.classList.remove('hidearrows')
+                    rightArrow.style.visibility = null
+                })
+                tpBanner.addEventListener('mouseout', () => {
+                    rightArrow.classList.add('hedearrows')
+                    rightArrow.style.visibility = 'hidden'
+                })
+            </script>
+
+          
 
 
 
@@ -792,6 +940,15 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     <script src="js/parallax.js"></script>
     <script src="js/smooth-scroll.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/retina-1.1.0.min.js"></script>
+
+    <!-- THEMEPUNCH SLIDER-->
+
+    <script src="js/jquery.themepunch.tools.min.js"></script>
+    <script src="js/jquery.themepunch.revolution.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
 
 
 
