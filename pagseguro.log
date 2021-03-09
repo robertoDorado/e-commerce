@@ -4407,3 +4407,10 @@
 18/02/2021 20:04:55 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
 18/02/2021 20:04:55 PagSeguro.Checkout[info]: Params: 
 18/02/2021 20:05:04 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 4EAB4C2D-8AEF-46CE-A237-550F19A9C501
+20/02/2021 14:34:47 PagSeguro.Session[info]: Begin
+20/02/2021 14:34:47 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+20/02/2021 14:34:54 PagSeguro.Session[info]: Session ID: 763f478dc15143a3a85afe1d3666491f
+20/02/2021 14:36:51 PagSeguro.DirectPayment.CreditCard[info]: Begin
+20/02/2021 14:36:51 PagSeguro.DirectPayment.CreditCard[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/?email=robertodorado7%40gmail.com&token=CAA0F164572E4C678487BE8078526A28
+20/02/2021 14:36:52 PagSeguro.Checkout[info]: Params: 
+20/02/2021 14:37:00 PagSeguro.DirectPayment.CreditCard[info]: Credit Card Payment Code: 3E67340A-26B6-479D-ACC8-748F1B608858
